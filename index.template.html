@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f6f2"><title>麦味拾光 · 把小日子，慢慢收好</title><style>/*STYLE*/</style></head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar">
+  <a class="brand" href="#calendar" aria-label="麦味拾光首页"><span class="brand-icon">m<span>✳</span></span><span><b>麦味拾光</b><small>little bites, lovely days</small></span></a>
+  <div class="sidebar-caption">我的生活，慢慢收藏</div>
+  <nav class="main-nav" aria-label="主要页面">
+   <button aria-label="照片日历" data-view="calendar" class="nav-item active"><span data-icon="calendar"></span><span>照片日历</span><small>01</small></button>
+   <button aria-label="本月收藏" data-view="collection" class="nav-item"><span data-icon="box"></span><span>本月收藏</span><small>02</small></button>
+   <button aria-label="年度书架" data-view="year" class="nav-item"><span data-icon="book"></span><span>年度书架</span><small>03</small></button>
+  </nav>
+  <div class="sidebar-note"><span class="note-star">✳</span><p>不必每天精彩，<br>每一页都算数。</p><small>A LITTLE MOMENT TO KEEP.</small></div>
+  <div class="sidebar-bottom"><button id="space-btn" class="space-btn"><span class="space-dot"></span><span>示例手帐</span><span>⇄</span></button><button id="backup-btn" class="quiet-btn"><span data-icon="download"></span>备份我的记录</button><button id="restore-btn" class="quiet-btn"><span data-icon="upload"></span>恢复备份</button><input id="restore-input" type="file" accept="application/json,.json" hidden><small class="storage-note">保存在这个浏览器里</small></div>
+ </aside>
+ <main class="main-area">
+  <header class="topbar"><div class="breadcrumb">我的手帐 <span>/</span> <b id="view-crumb">照片日历</b></div><div class="top-actions"><span class="demo-badge">效果演示 · 未连接 MCP</span><button class="icon-btn" id="motion-toggle" aria-label="暂停装饰动效" title="暂停装饰动效"><span data-icon="spark"></span></button><button id="new-entry-top" class="primary-btn small"><span data-icon="plus"></span>记一餐</button></div></header>
+  <div id="view-host" class="view-host"></div>
+  <footer class="app-footer"><span>记住这一餐，也记住当时的自己。</span><span>原创插画示例 · 可上传自己的照片</span></footer>
+ </main>
+</div>
+<nav class="mobile-nav" aria-label="手机页面导航"><button aria-label="照片日历" data-view="calendar" class="active"><span data-icon="calendar"></span>日历</button><button aria-label="本月收藏" data-view="collection"><span data-icon="box"></span>收藏</button><button id="mobile-add" class="mobile-add" aria-label="记一餐"><span data-icon="plus"></span></button><button aria-label="年度书架" data-view="year"><span data-icon="book"></span>年册</button><button id="mobile-space"><span data-icon="user"></span>空间</button></nav>
+<dialog id="editor-dialog" class="editor-dialog"><div id="editor-host"></div></dialog>
+<dialog id="entry-dialog" class="entry-dialog"><div id="entry-host"></div></dialog>
+<dialog id="reel-dialog" class="reel-dialog"><div id="reel-host"></div></dialog>
+<dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="row end"><button class="secondary-btn" value="cancel">取消</button><button class="primary-btn" value="ok">确认</button></div></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>/*SCRIPT*/</script></body></html>

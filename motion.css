@@ -1,0 +1,81 @@
+.km-tray {
+  position: relative;
+  height: 350px;
+  min-height: 300px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255,255,255,.8), transparent 72%),
+    #f7f0e6;
+  border: 1px solid rgba(116, 84, 58, .10);
+  box-shadow: inset 0 2px 10px rgba(119, 91, 61, .025);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.km-tray-decoration { position: absolute; inset: 0; pointer-events: none; color: #c2a88b; }
+.km-tray-star { position: absolute; line-height: 1; opacity: .65; }
+.km-tray-star-one { top: 30px; left: 28px; font-size: 22px; transform: rotate(12deg); }
+.km-tray-star-two { top: 76px; right: 33px; font-size: 30px; transform: rotate(-9deg); }
+.km-tray-word {
+  position: absolute; top: 34px; left: 0; right: 0; text-align: center;
+  font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-style: italic;
+  letter-spacing: .3px; color: #b69d82;
+}
+.km-sticker {
+  position: absolute; left: 0; top: 0; margin: 0; padding: 0; border: 0;
+  display: block; background: none; border-radius: 25%; cursor: grab;
+  color: #5c4032; touch-action: none; -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+  transform-origin: 50% 50%; outline: none;
+}
+.km-sticker-art {
+  position: relative; display: block; height: 100%; width: 100%;
+  transition: scale .18s ease, filter .18s ease;
+  filter: drop-shadow(0 1px 0 white) drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 -1px 0 white) drop-shadow(0 5px 3px rgba(77,48,24,.11));
+}
+.km-sticker img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  pointer-events: none; -webkit-user-drag: none;
+}
+.km-sticker-label {
+  position: absolute; z-index: 5; left: 50%; bottom: -15px; transform: translate(-50%, 3px);
+  max-width: 140px; width: max-content; padding: 5px 9px; border-radius: 8px;
+  background: #fffdf9; border: 1px solid #e7dacb; box-shadow: 0 3px 10px #60432512;
+  color: #665043; font-size: 11px; line-height: 1.4; font-family: inherit;
+  opacity: 0; pointer-events: none; transition: opacity .15s, transform .15s;
+}
+.km-sticker:hover .km-sticker-art { scale: 1.045; }
+.km-sticker:hover .km-sticker-label,
+.km-sticker:focus-visible .km-sticker-label { opacity: 1; transform: translate(-50%, 0); }
+.km-sticker:focus-visible { outline: 2px dashed #a95d46; outline-offset: 3px; }
+.km-sticker.km-dragging { cursor: grabbing; }
+.km-sticker.km-dragging .km-sticker-art {
+  scale: 1.075;
+  filter: drop-shadow(0 1px 0 white) drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 -1px 0 white) drop-shadow(0 11px 7px rgba(77,48,24,.20));
+}
+.km-sticker.km-dragging .km-sticker-label { opacity: 0; }
+.km-sticker.km-selected .km-sticker-art { animation: km-soft-pop .4s cubic-bezier(.2,.65,.3,1); }
+.km-moving .km-sticker { will-change: transform; }
+.km-reduced .km-sticker { cursor: pointer; touch-action: manipulation; }
+.km-reduced .km-sticker-art { transition: none; }
+.km-reduced .km-sticker.km-selected .km-sticker-art { animation: none; }
+.km-empty {
+  position: absolute; inset: 0; display: grid; place-items: center; margin: 0;
+  padding: 35px; font-size: 14px; color: #a08b76; text-align: center;
+}
+@keyframes km-soft-pop {
+  0%,100% { scale: 1; }
+  42% { scale: 1.12; }
+  72% { scale: .97; }
+}
+@media (max-width: 600px) {
+  .km-tray { height: 320px; border-radius: 20px; }
+  .km-tray-word { top: 28px; font-size: 15px; }
+  .km-tray-star-one { top: 27px; left: 21px; font-size: 17px; }
+  .km-tray-star-two { top: 64px; right: 23px; font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .km-sticker-art, .km-sticker-label { transition: none; }
+  .km-sticker.km-selected .km-sticker-art { animation: none; }
+}

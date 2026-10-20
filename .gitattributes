@@ -1,0 +1,4 @@
+* text=auto eol=lf
+CONTEST_DECLARATION.md -text
+*.png binary
+*.webm binary

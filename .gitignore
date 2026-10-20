@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+private/
+*.log
+*.pid
+qa/
+qa-*.js
+qa-*.py
+qa-*.cjs
+.playwright-cli/
+dist/
+_site/
+.DS_Store

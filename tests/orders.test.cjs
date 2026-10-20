@@ -1,0 +1,8 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {payload,yuan,localDate,normalize,normalizeList}=require('../lib/orders.cjs');
+const row={orderId:'fiction-1',createTime:'2026-10-20 23:58:00',orderStatus:'订单已完成',storeName:'示例店',realTotalAmount:'52.90',orderProductList:[{productName:'双人套餐',quantity:1,comboItemList:[{name:'薯条',quantity:2}]}],mobilePhone:'must-not-pass',deliveryInfo:{addressDetail:'must-not-pass'},payId:'must-not-pass'};
+test('金额保留分，缺失不造零价',()=>{assert.equal(yuan('52.90'),5290);assert.equal(yuan(undefined),null);assert.equal(yuan('0'),0);assert.equal(yuan('-1'),null);assert.equal(yuan('NaN'),null);});
+test('用日期文本归档而不是转UTC，拒绝无效日期',()=>{assert.equal(localDate(row.createTime),'2026-10-20');assert.equal(localDate('2026-02-29 12:00:00'),null);assert.equal(localDate('2028-02-29 12:00:00'),'2028-02-29');});
+test('订单只保留允许字段，不输出原编号/配送/支付信息',()=>{const order=normalize(row,'a');assert.equal(order.items[0].children[0].quantity,2);assert.equal(order.totalMinor,5290);assert.equal(order.completed,true);const text=JSON.stringify(order);assert.ok(!text.includes('must-not-pass'));assert.ok(!text.includes('fiction-1'));assert.ok(!text.includes('deliveryInfo'));});
+test('同账号去重，跨账号隔离，不把取消单标完成',()=>{const result={structuredContent:{success:true,code:200,data:{list:[row,row]}}};assert.equal(normalizeList(result,'a').length,1);assert.notEqual(normalize(row,'a').id,normalize(row,'b').id);assert.equal(normalize({...row,orderStatus:'已取消'},'a').completed,false);});
+test('业务失败和错误列表不生成记录',()=>{assert.throws(()=>payload({structuredContent:{success:false}}));assert.throws(()=>normalizeList({structuredContent:{data:{}}},'a'));assert.throws(()=>normalize({...row,orderId:''},'a'));});

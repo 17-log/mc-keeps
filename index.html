@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f6f2"><title>麦味拾光 · 把小日子，慢慢收好</title><style>*{box-sizing:border-box} :root{--paper:#f7f6f2;--card:#fff;--ink:#302f2a;--muted:#929188;--line:#e9e6df;--accent:#ca6249;--accent-soft:#faece5;--green:#7d8b68;--serif:Georgia,"Songti SC","SimSun",serif}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:default}button,a,input,textarea,select{ -webkit-tap-highlight-color:transparent}button{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:3px solid #df9c77;outline-offset:4px}button{border:0;background:none}a{color:inherit}svg{display:block}.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.app-shell{max-width:1600px;margin:auto;display:grid;grid-template-columns:224px minmax(0,1fr);min-height:100vh}.sidebar{border-right:1px solid var(--line);padding:36px 25px 25px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand-icon{background:var(--accent);border-radius:13px;color:#fff;font:italic 38px/48px Georgia;width:46px;height:46px;text-align:center;position:relative}.brand-icon>span{position:absolute;font:16px Georgia;right:5px;top:4px;color:#ffdb9c}.brand b{font-size:19px;letter-spacing:1px}.brand small{display:block;font-size:9px;color:#99958b;letter-spacing:.25px}.sidebar-caption{font-size:11px;color:#a19e93;margin:42px 12px 15px}.main-nav{display:grid;gap:8px}.nav-item{display:flex;align-items:center;text-align:left;gap:13px;border-radius:12px;padding:12px 13px;color:#8a887e;transition:background .2s,color .2s}.nav-item>small{margin-left:auto;font:10px monospace;color:#bbb5a8}.nav-item.active{background:#eee9de;color:#4a473c;font-weight:600}.nav-item.active .icon{color:var(--accent)}.nav-item:hover{background:#f0ede5}.sidebar-note{padding:30px 12px;margin-top:30px}.note-star{color:#b4b497;font-size:39px;line-height:1;display:block}.sidebar-note p{font:18px/1.9 var(--serif);letter-spacing:1.5px;color:#797566}.sidebar-note small{font-size:8px;letter-spacing:1.4px;color:#aaa391}.sidebar-bottom{margin-top:auto;display:grid;gap:10px}.space-btn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;display:flex;gap:9px;align-items:center;font-size:12px}.space-btn>span:last-child{margin-left:auto}.space-dot{width:7px;height:7px;border-radius:50%;background:#b4b797}.quiet-btn{display:flex;align-items:center;gap:9px;font-size:11px;color:#8c887e;text-align:left;padding:3px 10px}.quiet-btn .icon{width:14px;height:14px}.storage-note{font-size:10px;color:#aaa497;padding-left:10px}.main-area{padding:0 38px;min-width:0}.topbar{height:94px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px}.breadcrumb{color:#aaa69c;font-size:12px}.breadcrumb span{margin:0 12px;color:#ccc7bd}.breadcrumb b{color:#746e61;font-weight:500}.top-actions{display:flex;align-items:center;gap:14px}.demo-badge{font-size:10px;letter-spacing:.2px;color:#a49d90}.primary-btn,.secondary-btn{border-radius:10px;padding:12px 20px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .18s,background .18s}.primary-btn{background:var(--accent);color:white;box-shadow:0 3px 7px #ad5b3912}.primary-btn:hover{background:#b95740;transform:translateY(-1px)}.primary-btn:active{transform:scale(.97)}.primary-btn.small{font-size:12px;padding:9px 14px;border-radius:9px}.primary-btn.small .icon{width:15px;height:15px}.secondary-btn{background:#f0eee8;border:1px solid var(--line)}.secondary-btn:hover{background:#e9e5db}.icon-btn{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f0eee8;color:#8b8578;flex:none}.icon-btn:hover{background:#e8e2d6}.view-host{padding:34px 0 24px;min-height:calc(100vh - 160px)}.page-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px}.eyebrow{font:10px/1.5 Georgia;letter-spacing:2px;color:#96907f;text-transform:uppercase}.page-heading h1{font-size:30px;font-weight:550;letter-spacing:-.7px;line-height:1.35;margin:9px 0 7px}.page-heading h1 em{font:italic 34px var(--serif);color:var(--accent);font-weight:normal}.subtitle{font-size:12px;color:#9a9486;margin:0}.heading-decoration{font:italic 40px/1 var(--serif);color:#c4bd9f;transform:rotate(-9deg);padding:0 12px 10px}.content-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:25px}.calendar-panel{background:white;border:1px solid var(--line);border-radius:20px;padding:25px 25px 19px;box-shadow:0 5px 20px #30261c03;min-width:0}.calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:23px}.month-name{display:flex;align-items:baseline;gap:10px}.month-name strong{font:36px/1 var(--serif);letter-spacing:-1px}.month-name small{font:11px Georgia;color:#aaa28f;letter-spacing:1px}.month-controls{display:flex;gap:6px;align-items:center}.month-controls .icon-btn{width:27px;height:27px;background:#f8f7f3}.month-controls .icon{width:15px;height:15px}.today-btn{font-size:10px;padding:5px 8px;color:#8b8476;background:#f8f7f3;border-radius:6px}.weekdays{display:grid;grid-template-columns:repeat(7,1fr);color:#b0aa9e;font-size:10px;text-align:center;margin-bottom:9px}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}.day-cell{height:81px;position:relative;border-radius:11px;background:#faf9f6;border:1px solid transparent;display:flex;justify-content:center;align-items:center;padding:0;transition:background .2s,border-color .2s,transform .2s;isolation:isolate;min-width:0}.day-cell.blank{background:transparent;pointer-events:none}.day-cell:hover{background:#f4f0e5;transform:translateY(-2px)}.day-cell .day-number{position:absolute;top:5px;left:7px;font-size:10px;color:#a9a294;z-index:2}.day-cell.has-entry .day-number{font-size:9px;color:#a9a294}.day-cell.selected{background:#f8e9e0;border-color:#dca28d}.day-cell.selected .day-number{color:#ae523d}.day-cell.is-today:after{position:absolute;bottom:5px;width:3px;height:3px;border-radius:50%;content:"";background:var(--accent)}.day-sticker{width:65px;height:65px;object-fit:contain;filter:drop-shadow(0 3px 2px #51412c17);margin-top:7px;transform:rotate(var(--tilt,-6deg));transition:transform .38s cubic-bezier(.18,.8,.27,1.4);pointer-events:none}.day-cell:hover .day-sticker{transform:translateY(-4px) rotate(5deg) scale(1.13)}.day-cell .day-photo{width:48px;height:54px;object-fit:cover;border:3px solid white;border-bottom:7px solid white;border-radius:3px;margin-top:9px;box-shadow:0 2px 4px #473b2d26;transform:rotate(var(--tilt,-6deg))}.day-extra{position:absolute;right:3px;bottom:2px;border-radius:4px;font-size:8px;color:#a99a81}.calendar-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:19px;margin-top:18px;border-top:1px dashed var(--line);font-size:10px;color:#a69d8c}.legend-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:7px}.calendar-bottom b{color:#7f745f;font-weight:500}.calendar-under{display:flex;align-items:center;gap:16px;background:#eeeadd;border:1px solid #e9e3d4;border-radius:14px;margin-top:15px;padding:17px 20px}.calendar-under .under-star{font-size:28px;color:#aaa77e}.calendar-under p{margin:0;font-size:12px;color:#7d775e}.calendar-under small{font-size:10px;color:#a09a83}.text-btn{margin-left:auto;color:var(--accent);font-size:11px;white-space:nowrap}.day-preview{min-width:0;perspective:1000px}.preview-label{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#a39a88;margin-bottom:13px;padding:0 5px}.preview-label span:last-child{letter-spacing:1px;font:10px Georgia}.journal-card{background:#fcfaf3;border-radius:3px 14px 14px 3px;border:1px solid #e9e2d4;box-shadow:3px 7px 18px #5f4d3221,inset 5px 0 0 #f0eadd;padding:24px 22px 18px;position:relative;transform:rotate(1.1deg);transition:transform .3s}.journal-card:after{content:"";position:absolute;left:7px;top:0;bottom:0;border-left:1px solid #e8decb;pointer-events:none}.journal-card:hover{transform:rotate(0deg) translateY(-2px)}.journal-date{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.journal-date strong{font:29px/1 var(--serif);color:#796a52}.journal-date small{font:9px Georgia;letter-spacing:1.4px;color:#9c907a}.journal-photo-wrap{position:relative;background:white;padding:6px 6px 25px;box-shadow:0 2px 6px #493c2718;transform:rotate(-3deg);cursor:pointer}.journal-photo-wrap .tape{position:absolute;width:65px;height:19px;background:#c3c7a374;top:-10px;left:50%;transform:translateX(-50%) rotate(5deg);z-index:2;clip-path:polygon(1% 2%,100% 5%,96% 97%,0 90%)}.journal-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.photo-caption{font:9px var(--serif);color:#aa9a83;position:absolute;bottom:7px;text-align:center;width:calc(100% - 12px);letter-spacing:1px}.journal-card h3{font:19px/1.65 var(--serif);letter-spacing:1px;margin:19px 0 7px;color:#645b4a}.journal-note{font-size:11px;line-height:2;color:#9a8a73;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.journal-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:15px}.journal-tags span{font-size:9px;background:#f1ecdf;padding:3px 7px;border-radius:5px;color:#a2967c}.journal-meta{display:flex;justify-content:space-between;border-top:1px dashed #ded5c2;padding-top:12px;margin-top:16px;font-size:9px;color:#b3a58d}.journal-sign{font:italic 16px Georgia;color:#ba9e81}.day-switch{display:flex;justify-content:center;gap:6px;margin:16px 0 13px}.day-switch button{height:5px;width:5px;padding:0;border-radius:50%;background:#d6cbb7}.day-switch button.active{background:var(--accent);width:16px;border-radius:5px}.preview-actions{display:flex;gap:9px;justify-content:center;margin-top:15px}.preview-actions button{font-size:11px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid #e5dfd3;border-radius:8px;padding:8px 10px;color:#9b8b73}.preview-actions .icon{width:13px;height:13px}.preview-empty{background:#f0ede3;border:1px dashed #d8d0bf;border-radius:15px;text-align:center;padding:55px 20px}.preview-empty .empty-art{width:100px;opacity:.75;margin:auto auto 20px}.preview-empty p{font:18px var(--serif);color:#8c8068}.preview-empty small{display:block;color:#b0a58f;font-size:11px;margin-bottom:20px}.month-summary{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;gap:15px}.mini-stat{background:white;border:1px solid var(--line);border-radius:13px;padding:15px 19px;display:flex;align-items:center;gap:12px}.mini-stat .stat-icon{width:37px;height:37px;display:grid;place-items:center;border-radius:50%;color:#ba9d7d;background:#f7f2e9}.mini-stat strong{font:24px Georgia;color:#615846;display:block;line-height:1.3}.mini-stat small{font-size:10px;color:#a59d8f}.mini-stat .stat-unit{font:10px sans-serif;color:#a99e8c;margin-left:3px}.app-footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:17px 0 20px;color:#b1a99a;font-size:9px}.mobile-nav{display:none}.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,18px);background:#3b392f;color:#fff;font-size:12px;border-radius:30px;padding:12px 23px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:1000;max-width:85vw;text-align:center;box-shadow:0 5px 25px #0002}.toast.show{opacity:1;transform:translate(-50%,0)}
+/* Collection */
+.collection-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:24px}.collection-board{border:1px solid var(--line);background:#fff;border-radius:23px;overflow:hidden}.collection-board-head{padding:23px 26px 0;display:flex;align-items:center;justify-content:space-between}.collection-board-head h2{font:22px var(--serif);margin:0}.collection-board-head small{font-size:10px;color:#aea592}.sticker-box{height:355px;margin:0 18px;position:relative;overflow:hidden;min-width:0}.collection-caption{border-top:1px dashed var(--line);padding:15px 25px;display:flex;align-items:center;justify-content:space-between;gap:10px}.collection-caption p{margin:0;font-size:10px;color:#a59a86}.shake-btn{background:#f4eee0;border:1px solid #e7dec9;color:#a48c58;border-radius:20px;padding:7px 15px;white-space:nowrap;font-size:11px}.recap-invitation{background:#dfdfcd;border-radius:16px;padding:23px;display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:260px}.recap-invitation .eyebrow{color:#979b7b}.recap-invitation h2{font:25px/1.5 var(--serif);color:#62664e;position:relative;z-index:2;margin:18px 0 9px}.recap-invitation p{font-size:11px;color:#92977b;z-index:2}.recap-invitation button{margin-top:auto;background:#747f5b;color:white;align-self:flex-start;border-radius:8px;padding:9px 15px;font-size:11px;z-index:2}.recap-invitation .recap-art{width:120px;height:120px;position:absolute;right:-5px;bottom:45px;transform:rotate(14deg);opacity:.7}.collection-facts{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:13px;background:#fff}.fact-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f2eee7;font-size:11px;color:#aaa08d}.fact-row:last-child{border:0}.fact-row b{color:#857860;font-weight:500}.collection-bottom{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}.collection-bottom-head{display:flex;justify-content:space-between;align-items:center}.collection-bottom h3{font:19px var(--serif);margin:0}.collection-strip{display:flex;gap:10px;overflow-x:auto;padding:20px 2px 8px}.strip-entry{width:110px;flex:none;text-align:left;padding:7px;background:#faf8f3;border-radius:9px;transition:transform .2s}.strip-entry:hover{transform:translateY(-4px)}.strip-entry img{width:96px;height:77px;object-fit:contain}.strip-entry .is-photo{object-fit:cover;border-radius:5px}.strip-entry strong{display:block;font:11px Georgia;color:#a08b6a;margin-top:5px}.strip-entry small{display:block;font-size:9px;color:#a59c8b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px}.year-controls{display:flex;gap:14px;align-items:center}.year-controls b{font:27px Georgia;font-weight:normal}.year-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:23px 19px}.month-book{padding:0;text-align:left;perspective:700px;min-width:0}.book-cover{height:210px;border-radius:3px 12px 12px 3px;padding:19px 17px;background:#e9dfcb;box-shadow:3px 6px 8px #5a4e3215,inset 6px 0 #ffffff38,inset -4px 0 #00000005;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;transform-origin:left center;border:1px solid #dcd1b9}.month-book:hover .book-cover{transform:rotateY(-12deg) rotate(-2deg);box-shadow:7px 9px 13px #5a4e3222}.book-cover:before{position:absolute;content:"";left:10px;top:0;bottom:0;border-left:1px solid #b5a68040}.book-month{display:flex;justify-content:space-between;align-items:baseline;color:#8d795c}.book-month strong{font:30px Georgia}.book-month small{font:8px Georgia;letter-spacing:1px}.book-art{width:120px;height:120px;object-fit:contain;position:absolute;bottom:26px;left:50%;transform:translateX(-50%) rotate(-8deg);filter:drop-shadow(0 4px 4px #83684a20)}.book-photo{width:105px;height:110px;object-fit:cover;border:5px solid white;box-shadow:0 3px 5px #5b462923}.book-caption{position:absolute;bottom:14px;left:21px;font-size:9px;color:#9c8a6c;letter-spacing:1px}.book-empty .book-cover{background:#eeece5;border-color:#e4e0d6;box-shadow:2px 3px 7px #473e2910}.book-empty .book-month{color:#c4bda9}.book-empty .book-caption{color:#c3bba7}.book-empty .empty-book-star{position:absolute;top:49%;left:50%;transform:translate(-50%,-50%);color:#d5d0c1;font-size:30px}.book-label{display:flex;justify-content:space-between;padding:10px 4px;font-size:10px;color:#a1957e}.book-label b{font-weight:500;color:#7e715c}
+/* Dialogs */
+dialog{border:0;padding:0;background:#fff;color:var(--ink);box-shadow:0 25px 90px #2e261d30;max-height:92vh;max-width:calc(100vw - 24px);border-radius:23px;overscroll-behavior:contain}dialog::backdrop{background:#342a204d;backdrop-filter:blur(6px)}dialog[open]{animation:dialog-in .4s cubic-bezier(.22,.8,.2,1)}.dialog-header{display:flex;align-items:center;justify-content:space-between;padding:23px 28px;border-bottom:1px solid var(--line);gap:16px}.dialog-header h2{font-size:19px;margin:0}.dialog-header p{font-size:10px;color:#a99a85;margin:5px 0 0}.editor-dialog{width:820px}.editor-body{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:25px 28px}.editor-preview{background:#f4f0e5;border-radius:13px;padding:23px 20px;display:flex;align-items:center;justify-content:center;min-width:0}.editor-preview .journal-card{width:100%;padding:18px}.editor-preview .journal-card h3{font-size:16px}.editor-preview .journal-note{font-size:10px;max-height:65px;overflow:hidden}.editor-fields{min-width:0;display:flex;flex-direction:column;gap:13px}.field-label{display:block;font-size:11px;color:#8d7e68;margin-bottom:5px}.field-note{font-size:10px;color:#b0a28b;margin:5px 0 0}.field-input{width:100%;border:1px solid #e7e1d5;border-radius:8px;padding:9px 11px;background:#fdfcf9;color:#675e4c;font-size:12px;outline:none;min-width:0}.field-input:focus{border-color:#d19277;box-shadow:0 0 0 3px #e5b9a326}textarea.field-input{resize:vertical;min-height:70px;max-height:150px}.row{display:flex;gap:10px}.row>*{min-width:0}.row.end{justify-content:flex-end}.row.fields>div{flex:1}.food-picker{display:flex;gap:5px;flex-wrap:wrap}.food-choice{width:38px;height:39px;padding:2px;border-radius:8px;background:#f5f1e7;border:1px solid transparent}.food-choice img{width:100%;height:100%;object-fit:contain}.food-choice.selected{border-color:var(--accent);background:#f9e6d9}.upload-btn{display:flex;align-items:center;justify-content:center;gap:7px;background:#f4efe3;padding:10px;border:1px dashed #cdbc9f;border-radius:9px;width:100%;font-size:11px;color:#a28a67}.upload-btn .icon{width:16px;height:16px}.mood-options{display:flex;gap:6px;flex-wrap:wrap}.mood-pill{font-size:10px;padding:5px 9px;border-radius:15px;border:1px solid #e9e2d4;color:#a49479}.mood-pill.selected{background:#f4e9dc;color:#ad7954;border-color:#d6b494}.template-options{display:flex;gap:8px}.template-options button{padding:6px 11px;border:1px solid #e5decd;color:#9a8b70;border-radius:6px;font-size:10px}.template-options button.selected{border-color:#a6ad89;background:#edf0e0;color:#839067}.editor-footer{padding:18px 28px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px}.editor-footer small{font-size:10px;color:#b3a58f}.order-toggle{font-size:11px;color:var(--accent);text-align:left;padding:5px 0}.order-list{display:grid;gap:7px;background:#f8f4eb;border-radius:9px;padding:10px}.order-option{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px;border:1px solid #e9dfcb;border-radius:7px;font-size:10px;text-align:left}.order-option small{font-size:9px;color:#b0a186}.order-option.selected{border-color:#cb9d76;background:#f2e7d4}.order-details{font-size:10px;color:#a38d6b}.order-details label{display:flex;gap:5px;align-items:center;margin-top:5px}.order-details input{accent-color:var(--accent)}.entry-dialog{width:570px;background:#f2ecdf}.entry-dialog .dialog-header{border-color:#e5ddcc}.entry-dialog .dialog-header h2{font:17px var(--serif);color:#7e6d51}.entry-full{padding:25px 60px 15px}.entry-full .journal-card{transform:rotate(-1deg)}.entry-full .journal-note{font-size:12px;line-height:2;max-height:none}.entry-dialog-actions{display:flex;justify-content:center;gap:10px;padding:15px 20px 25px}.entry-dialog-actions button{font-size:12px}.delete-btn{color:#ba8c77;font-size:10px;align-self:center;padding:8px}.receipt-theme .journal-card,.journal-card.receipt-theme{background:#fffcf5;border-style:dashed}.receipt-theme .journal-photo-wrap{transform:rotate(2deg)}.confirm-dialog{width:390px;padding:26px}.confirm-dialog h2{font-size:18px;margin:0 0 12px}.confirm-dialog p{font-size:12px;color:#918571;white-space:pre-wrap;margin-bottom:23px}.confirm-dialog button{font-size:12px}.reel-dialog{width:450px;background:#e9e5d8;padding:25px;overflow:hidden}.reel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.reel-top small{font:10px Georgia;letter-spacing:2px;color:#9e9076}.reel-stage{height:465px;perspective:1000px;position:relative}.reel-page{position:absolute;inset:0;background:#fffdf6;border:1px solid #dfd4c1;border-radius:8px;box-shadow:0 8px 18px #5e452923;padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;backface-visibility:hidden;transform-origin:50% 100%}.reel-date{font:42px var(--serif);color:#8b7453;margin-bottom:20px}.reel-page img{width:90%;height:240px;object-fit:contain;filter:drop-shadow(0 8px 6px #66502e20)}.reel-page img.user-photo{object-fit:cover;border:7px solid white;box-shadow:0 3px 6px #62503422;transform:rotate(-3deg)}.reel-page h3{font:20px var(--serif);line-height:1.6;color:#79674c;margin:19px 0 0}.reel-page p{font-size:11px;color:#a28d70;margin:10px 0 0}.reel-controls{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:22px}.reel-progress{display:flex;gap:4px;justify-content:center;margin-top:20px}.reel-progress span{height:3px;flex:1;background:#d0c9b8;border-radius:2px}.reel-progress span.active{background:#ab7957}.reel-progress span.done{background:#b7a68a}.reel-caption{text-align:center;font-size:9px;color:#a99d85;margin:15px 0 0}.reel-save{font-size:11px;color:#a1835f;padding:7px}.fly-sticker{position:fixed;width:95px;height:95px;object-fit:contain;pointer-events:none;z-index:2000;filter:drop-shadow(0 8px 5px #503c2526)}.view-enter{animation:view-in .42s cubic-bezier(.22,.7,.3,1) both}.calendar-grid.entering .day-sticker,.calendar-grid.entering .day-photo{animation:sticker-in .55s cubic-bezier(.18,.7,.25,1.35) both;animation-delay:calc(var(--i) * 18ms)}.journal-pop{animation:page-reveal .4s cubic-bezier(.25,.8,.25,1)}.saved-pop{animation:saved-pop .65s cubic-bezier(.2,.8,.2,1.2)}.count-in{animation:view-in .4s both}@keyframes view-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes sticker-in{from{opacity:0;transform:translateY(-16px) rotate(-15deg) scale(.7)}to{opacity:1;transform:translateY(0) rotate(var(--tilt,-6deg)) scale(1)}}@keyframes dialog-in{from{opacity:0;transform:translateY(28px) scale(.96)}to{opacity:1;transform:none}}@keyframes page-reveal{from{opacity:0;transform:rotateY(-12deg) translateX(12px)}to{opacity:1;transform:none}}@keyframes saved-pop{0%{transform:scale(.8)}55%{transform:scale(1.18)}100%{transform:scale(1)}}.motion-off *, .motion-off *::before,.motion-off *::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+@media(min-width:1450px){.main-area{padding:0 55px}.day-cell{height:94px}.day-sticker{width:75px;height:75px}.content-grid{grid-template-columns:minmax(0,1fr) 340px}.journal-card{padding:28px}.calendar-panel{padding:28px}.page-heading{margin-bottom:34px}}
+@media(max-width:1170px){.app-shell{grid-template-columns:185px minmax(0,1fr)}.sidebar{padding:28px 17px}.main-area{padding:0 25px}.brand{gap:8px}.brand b{font-size:16px}.brand small{font-size:8px}.brand-icon{width:37px;height:40px;font-size:33px;line-height:41px}.content-grid{grid-template-columns:minmax(0,1fr) 270px;gap:18px}.calendar-panel{padding:20px 16px}.calendar-grid{gap:4px}.day-cell{height:72px}.day-sticker{width:56px;height:56px}.day-cell .day-photo{width:40px;height:48px}.journal-card{padding:22px 18px}.page-heading h1{font-size:27px}.collection-layout{grid-template-columns:minmax(0,1fr) 240px}.year-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mini-stat{padding:14px 12px}.mini-stat .stat-icon{display:none}}
+@media(max-width:950px){.app-shell{grid-template-columns:76px minmax(0,1fr)}.sidebar{padding:28px 13px;align-items:center}.brand>span:last-child,.sidebar-caption,.nav-item>span:nth-child(2),.nav-item small,.sidebar-note,.space-btn>span:nth-child(2),.storage-note{display:none}.main-nav{margin-top:40px}.nav-item{padding:12px}.sidebar-bottom{align-items:center}.space-btn{padding:10px}.quiet-btn{font-size:0;gap:0;padding:8px}.quiet-btn .icon{width:17px;height:17px}.main-area{padding:0 22px}.demo-badge{font-size:9px}.topbar{height:78px}.content-grid{grid-template-columns:minmax(0,1fr) 245px}.page-heading h1{font-size:25px}.heading-decoration{font-size:32px}.day-cell{height:69px}.day-sticker{width:53px;height:53px}.calendar-under{padding:13px}.calendar-under p{font-size:11px}.calendar-under small{font-size:9px}.collection-layout{grid-template-columns:minmax(0,1fr) 225px}.sticker-box{height:330px}.collection-board-head{padding:22px 18px 0}.collection-caption{padding:15px}.collection-caption p{font-size:9px}.editor-dialog{width:750px}}
+@media(max-width:720px){.app-shell{display:block}.sidebar{display:none}.main-area{padding:0 20px}.topbar{height:65px}.breadcrumb{font-size:11px}.top-actions{gap:8px}.demo-badge{font-size:8px}.top-actions .primary-btn{display:none}.top-actions .icon-btn{width:28px;height:28px}.top-actions .icon{width:16px;height:16px}.view-host{padding:25px 0 16px;min-height:calc(100vh - 150px)}.page-heading{margin-bottom:22px;gap:8px}.page-heading h1{font-size:25px;letter-spacing:-.5px;margin-top:7px}.page-heading h1 em{font-size:29px}.subtitle{font-size:10px}.eyebrow{font-size:8px;letter-spacing:1.8px}.heading-decoration{font-size:30px;padding-right:0;display:none}.content-grid{grid-template-columns:1fr}.calendar-panel{padding:20px 15px 16px;border-radius:16px}.calendar-toolbar{margin-bottom:20px}.month-name strong{font-size:31px}.calendar-grid{gap:5px}.day-cell{height:73px}.day-sticker{width:59px;height:59px}.day-cell .day-photo{width:43px;height:49px}.day-cell .day-number{font-size:9px;left:5px;top:4px}.calendar-bottom{font-size:9px;margin-top:14px;padding-top:14px}.calendar-under{margin-top:12px}.month-summary{gap:9px;margin-top:17px}.mini-stat{border-radius:10px;padding:12px}.mini-stat strong{font-size:22px}.mini-stat small{font-size:9px}.day-preview{margin-top:9px;padding:0 12px}.journal-card{padding:25px 27px}.journal-photo-wrap{max-width:370px;margin:auto}.journal-card h3{font-size:21px}.journal-note{font-size:12px}.journal-date strong{font-size:31px}.journal-tags span{font-size:10px}.journal-meta{font-size:10px}.preview-label{margin-bottom:18px}.preview-actions{margin-top:20px}.mobile-nav{display:flex;position:fixed;z-index:100;bottom:0;left:0;right:0;height:70px;background:#fbfaf6ed;backdrop-filter:blur(16px);border-top:1px solid #e7e0d3;align-items:center;justify-content:space-around;padding-bottom:env(safe-area-inset-bottom,0)}.mobile-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:9px;gap:4px;min-width:49px;height:50px;color:#a39b89}.mobile-nav button.active{color:var(--accent)}.mobile-nav .icon{width:19px;height:19px}.mobile-nav .mobile-add{background:var(--accent);color:white;width:45px;min-width:45px;height:45px;border-radius:15px;box-shadow:0 3px 10px #9c58312a;transform:translateY(-8px)}.mobile-nav .mobile-add .icon{width:23px;height:23px}.app-footer{margin:15px 0 80px;display:block;text-align:center;line-height:2;font-size:8px}.app-footer span{display:block}.toast{bottom:87px;font-size:11px}.collection-layout{grid-template-columns:1fr}.collection-board-head h2{font-size:21px}.sticker-box{height:340px;margin:0 8px}.collection-right{display:grid;grid-template-columns:1fr 1fr;gap:12px}.recap-invitation{min-height:215px;padding:18px}.recap-invitation h2{font-size:21px;margin-top:15px}.recap-invitation p{font-size:10px}.recap-invitation .recap-art{width:84px;height:84px;bottom:35px;right:0}.recap-invitation button{font-size:10px;padding:8px 10px}.collection-facts{margin:0;padding:15px 13px}.fact-row{font-size:10px;padding:10px 0}.collection-bottom{padding:18px 16px}.collection-bottom h3{font-size:17px}.collection-caption p{font-size:9px}.year-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 11px}.book-cover{height:163px;padding:14px 12px}.book-month strong{font-size:24px}.book-month small{font-size:7px}.book-art{width:90px;height:90px;bottom:24px}.book-photo{width:73px;height:83px}.book-caption{font-size:7px;left:14px;bottom:12px}.book-label{font-size:8px;padding:8px 2px}.year-controls{gap:7px}.year-controls b{font-size:23px}.year-controls .icon-btn{width:27px;height:27px}.year-controls .icon{width:14px;height:14px}.editor-dialog{width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:94vh;border-radius:18px}.dialog-header{padding:18px 20px}.dialog-header h2{font-size:17px}.editor-body{grid-template-columns:1fr;padding:18px 20px;gap:18px}.editor-preview{padding:16px;max-height:200px;overflow:hidden;display:none}.editor-fields{gap:14px}.field-input{font-size:14px}.food-choice{width:42px;height:42px}.editor-footer{padding:16px 20px;position:sticky;bottom:0;background:white}.editor-footer small{font-size:9px}.editor-footer .primary-btn{font-size:12px;padding:11px 15px}.editor-footer .secondary-btn{font-size:12px;padding:11px 13px}.entry-full{padding:22px 30px 10px}.entry-dialog-actions{gap:7px;padding:15px 10px 22px}.entry-dialog-actions .primary-btn,.entry-dialog-actions .secondary-btn{font-size:11px;padding:10px 13px}.entry-dialog .journal-card{padding:22px}.reel-dialog{padding:20px;width:380px}.reel-stage{height:420px}.reel-page{padding:23px}.reel-page img{height:205px}.reel-date{font-size:36px}.reel-page h3{font-size:19px}}
+@media(max-width:390px){.main-area{padding:0 14px}.day-cell{height:64px}.day-sticker{width:50px;height:50px}.day-cell .day-photo{width:36px;height:43px}.calendar-panel{padding:18px 12px}.calendar-grid{gap:4px}.book-cover{height:150px}.book-art{width:80px;height:80px}.collection-caption{padding:12px}.page-heading h1{font-size:23px}.demo-badge{font-size:7px}.day-preview{padding:0 5px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+.journal-meta{flex-wrap:wrap;gap:5px}.journal-meta>span:first-child{white-space:nowrap}
+@media(max-width:950px){.journal-sign{font-size:14px}}
+@media(max-width:720px){.food-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.food-choice{width:100%;height:44px;display:grid;place-items:center}.food-choice img{width:40px;height:40px}}
+
+.km-tray {
+  position: relative;
+  height: 350px;
+  min-height: 300px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255,255,255,.8), transparent 72%),
+    #f7f0e6;
+  border: 1px solid rgba(116, 84, 58, .10);
+  box-shadow: inset 0 2px 10px rgba(119, 91, 61, .025);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.km-tray-decoration { position: absolute; inset: 0; pointer-events: none; color: #c2a88b; }
+.km-tray-star { position: absolute; line-height: 1; opacity: .65; }
+.km-tray-star-one { top: 30px; left: 28px; font-size: 22px; transform: rotate(12deg); }
+.km-tray-star-two { top: 76px; right: 33px; font-size: 30px; transform: rotate(-9deg); }
+.km-tray-word {
+  position: absolute; top: 34px; left: 0; right: 0; text-align: center;
+  font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-style: italic;
+  letter-spacing: .3px; color: #b69d82;
+}
+.km-sticker {
+  position: absolute; left: 0; top: 0; margin: 0; padding: 0; border: 0;
+  display: block; background: none; border-radius: 25%; cursor: grab;
+  color: #5c4032; touch-action: none; -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+  transform-origin: 50% 50%; outline: none;
+}
+.km-sticker-art {
+  position: relative; display: block; height: 100%; width: 100%;
+  transition: scale .18s ease, filter .18s ease;
+  filter: drop-shadow(0 1px 0 white) drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 -1px 0 white) drop-shadow(0 5px 3px rgba(77,48,24,.11));
+}
+.km-sticker img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  pointer-events: none; -webkit-user-drag: none;
+}
+.km-sticker-label {
+  position: absolute; z-index: 5; left: 50%; bottom: -15px; transform: translate(-50%, 3px);
+  max-width: 140px; width: max-content; padding: 5px 9px; border-radius: 8px;
+  background: #fffdf9; border: 1px solid #e7dacb; box-shadow: 0 3px 10px #60432512;
+  color: #665043; font-size: 11px; line-height: 1.4; font-family: inherit;
+  opacity: 0; pointer-events: none; transition: opacity .15s, transform .15s;
+}
+.km-sticker:hover .km-sticker-art { scale: 1.045; }
+.km-sticker:hover .km-sticker-label,
+.km-sticker:focus-visible .km-sticker-label { opacity: 1; transform: translate(-50%, 0); }
+.km-sticker:focus-visible { outline: 2px dashed #a95d46; outline-offset: 3px; }
+.km-sticker.km-dragging { cursor: grabbing; }
+.km-sticker.km-dragging .km-sticker-art {
+  scale: 1.075;
+  filter: drop-shadow(0 1px 0 white) drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 -1px 0 white) drop-shadow(0 11px 7px rgba(77,48,24,.20));
+}
+.km-sticker.km-dragging .km-sticker-label { opacity: 0; }
+.km-sticker.km-selected .km-sticker-art { animation: km-soft-pop .4s cubic-bezier(.2,.65,.3,1); }
+.km-moving .km-sticker { will-change: transform; }
+.km-reduced .km-sticker { cursor: pointer; touch-action: manipulation; }
+.km-reduced .km-sticker-art { transition: none; }
+.km-reduced .km-sticker.km-selected .km-sticker-art { animation: none; }
+.km-empty {
+  position: absolute; inset: 0; display: grid; place-items: center; margin: 0;
+  padding: 35px; font-size: 14px; color: #a08b76; text-align: center;
+}
+@keyframes km-soft-pop {
+  0%,100% { scale: 1; }
+  42% { scale: 1.12; }
+  72% { scale: .97; }
+}
+@media (max-width: 600px) {
+  .km-tray { height: 320px; border-radius: 20px; }
+  .km-tray-word { top: 28px; font-size: 15px; }
+  .km-tray-star-one { top: 27px; left: 21px; font-size: 17px; }
+  .km-tray-star-two { top: 64px; right: 23px; font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .km-sticker-art, .km-sticker-label { transition: none; }
+  .km-sticker.km-selected .km-sticker-art { animation: none; }
+}
+
+.orders-button{border:1px solid #e3dccc;padding:7px 11px;border-radius:9px;font-size:11px;color:#95745e;white-space:nowrap}.orders-button:hover{background:#eee8db}.orders-dialog{width:670px}.orders-body{padding:24px 28px}.orders-explain{font-size:12px;color:#998b74;line-height:1.9}.orders-status{padding:12px 16px;border-radius:9px;background:#f3eee2;color:#9a8060;font-size:12px;margin:15px 0;white-space:pre-line}.live-order{padding:17px;border:1px solid #e6dfd0;border-radius:13px;margin-top:13px}.live-order h3{font:17px var(--serif);margin:0 0 8px;color:#78674f}.live-order p{margin:4px 0;font-size:11px;color:#a39276}.live-order .live-products{padding:12px 0;font-size:12px;color:#827258;line-height:1.8}.live-order select{margin:10px 0;padding:8px;width:100%;border:1px solid #e3d9c8;border-radius:8px;background:#fffcf7;font-size:11px}.live-order .row{align-items:center;flex-wrap:wrap}.live-order button{font-size:11px;padding:8px 12px}.orders-info{font-size:11px;color:#a38f72}.orders-close-row{display:flex;justify-content:space-between;align-items:center;gap:12px}.orders-dialog a{color:var(--accent)}@media(max-width:720px){.orders-body{padding:18px}.orders-dialog{max-height:90vh}.top-actions{gap:6px}.demo-badge{max-width:95px;line-height:1.4}.orders-button{font-size:10px;padding:7px 8px}}
+</style></head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar">
+  <a class="brand" href="#calendar" aria-label="麦味拾光首页"><span class="brand-icon">m<span>✳</span></span><span><b>麦味拾光</b><small>little bites, lovely days</small></span></a>
+  <div class="sidebar-caption">我的生活，慢慢收藏</div>
+  <nav class="main-nav" aria-label="主要页面">
+   <button aria-label="照片日历" data-view="calendar" class="nav-item active"><span data-icon="calendar"></span><span>照片日历</span><small>01</small></button>
+   <button aria-label="本月收藏" data-view="collection" class="nav-item"><span data-icon="box"></span><span>本月收藏</span><small>02</small></button>
+   <button aria-label="年度书架" data-view="year" class="nav-item"><span data-icon="book"></span><span>年度书架</span><small>03</small></button>
+  </nav>
+  <div class="sidebar-note"><span class="note-star">✳</span><p>不必每天精彩，<br>每一页都算数。</p><small>A LITTLE MOMENT TO KEEP.</small></div>
+  <div class="sidebar-bottom"><button id="space-btn" class="space-btn"><span class="space-dot"></span><span>示例手帐</span><span>⇄</span></button><button id="backup-btn" class="quiet-btn"><span data-icon="download"></span>备份我的记录</button><button id="restore-btn" class="quiet-btn"><span data-icon="upload"></span>恢复备份</button><input id="restore-input" type="file" accept="application/json,.json" hidden><small class="storage-note">保存在这个浏览器里</small></div>
+ </aside>
+ <main class="main-area">
+  <header class="topbar"><div class="breadcrumb">我的手帐 <span>/</span> <b id="view-crumb">照片日历</b></div><div class="top-actions"><span class="demo-badge">效果演示 · 未连接 MCP</span><button class="icon-btn" id="motion-toggle" aria-label="暂停装饰动效" title="暂停装饰动效"><span data-icon="spark"></span></button><button id="new-entry-top" class="primary-btn small"><span data-icon="plus"></span>记一餐</button></div></header>
+  <div id="view-host" class="view-host"></div>
+  <footer class="app-footer"><span>记住这一餐，也记住当时的自己。</span><span>原创插画示例 · 可上传自己的照片</span></footer>
+ </main>
+</div>
+<nav class="mobile-nav" aria-label="手机页面导航"><button aria-label="照片日历" data-view="calendar" class="active"><span data-icon="calendar"></span>日历</button><button aria-label="本月收藏" data-view="collection"><span data-icon="box"></span>收藏</button><button id="mobile-add" class="mobile-add" aria-label="记一餐"><span data-icon="plus"></span></button><button aria-label="年度书架" data-view="year"><span data-icon="book"></span>年册</button><button id="mobile-space"><span data-icon="user"></span>空间</button></nav>
+<dialog id="editor-dialog" class="editor-dialog"><div id="editor-host"></div></dialog>
+<dialog id="entry-dialog" class="entry-dialog"><div id="entry-host"></div></dialog>
+<dialog id="reel-dialog" class="reel-dialog"><div id="reel-host"></div></dialog>
+<dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="row end"><button class="secondary-btn" value="cancel">取消</button><button class="primary-btn" value="ok">确认</button></div></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>/* Original illustrated food stickers for 麦味拾光. No brand marks or external assets. */
+(function () {
+  'use strict';
+  let serial = 0;
+  const kinds = ['burger', 'fries', 'cola', 'coffee', 'nuggets', 'icecream', 'pie', 'breakfast'];
+  function seedDots(seed, count, x, y, w, h, colors, min = 0.6, max = 1.6) {
+    let n = seed >>> 0;
+    const rand = () => ((n = (1664525 * n + 1013904223) >>> 0) / 4294967296);
+    return Array.from({ length: count }, () => {
+      const cx = x + rand() * w, cy = y + rand() * h, r = min + rand() * (max - min);
+      return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}" fill="${colors[Math.floor(rand() * colors.length)]}" opacity="${(.25 + rand() * .4).toFixed(2)}"/>`;
+    }).join('');
+  }
+  function svg(kind, size = 160) {
+    if (!kinds.includes(kind)) kind = 'burger';
+    size = Number.isFinite(+size) && +size > 0 ? +size : 160;
+    const p = `ka${++serial}_`;
+    const u = name => `url(#${p}${name})`;
+    const lg = (id, stops, xy = 'x1="0" y1="0" x2="0" y2="1"') => `<linearGradient id="${p}${id}" ${xy}>${stops.map(([offset, color]) => `<stop offset="${offset}" stop-color="${color}"/>`).join('')}</linearGradient>`;
+    const gradients = [
+      lg('bun', [['0%', '#ffe0a1'], ['32%', '#f7be64'], ['72%', '#df8d35'], ['100%', '#c56d29']]),
+      lg('bunBase', [['0%', '#f6c778'], ['60%', '#e99d46'], ['100%', '#bd6d30']]),
+      lg('patty', [['0%', '#86462c'], ['50%', '#623022'], ['100%', '#3f241d']]),
+      lg('cheese', [['0%', '#ffdf69'], ['100%', '#f2ae31']]),
+      lg('lettuce', [['0%', '#acd75b'], ['50%', '#79b443'], ['100%', '#438340']]),
+      lg('red', [['0%', '#ec7961'], ['48%', '#d84f3f'], ['100%', '#b83b36']], 'x1="0" y1="0" x2="1" y2="1"'),
+      lg('paper', [['0%', '#fffaf1'], ['100%', '#e9ddc8']], 'x1="0" y1="0" x2="1" y2="1"'),
+      lg('fry', [['0%', '#ffe88b'], ['50%', '#f6bf49'], ['100%', '#d48c2f']], 'x1="0" y1="0" x2="1" y2="0"'),
+      lg('cola', [['0%', '#b86e36'], ['20%', '#8d472a'], ['78%', '#482b25'], ['100%', '#6f3c29']]),
+      lg('glass', [['0%', '#fffaf3'], ['30%', '#f6eddb'], ['100%', '#d7c7a9']], 'x1="0" y1="0" x2="1" y2="0"'),
+      lg('latte', [['0%', '#a26d48'], ['28%', '#c18a5b'], ['45%', '#dab587'], ['65%', '#edd5b4'], ['100%', '#c59b6e']]),
+      lg('cream', [['0%', '#fffdf2'], ['52%', '#fff1d7'], ['100%', '#dfc69d']], 'x1=".1" y1="0" x2=".8" y2="1"'),
+      lg('crust', [['0%', '#efbd68'], ['25%', '#e4a04a'], ['75%', '#c47a32'], ['100%', '#a65d28']], 'x1="0" y1="0" x2="1" y2="1"'),
+      lg('egg', [['0%', '#fffdf4'], ['70%', '#f5ebd3'], ['100%', '#ddcca5']]),
+      `<radialGradient id="${p}yolk" cx=".35" cy=".25"><stop stop-color="#ffeb8b"/><stop offset=".5" stop-color="#ffd353"/><stop offset="1" stop-color="#ec9d2c"/></radialGradient>`,
+      `<filter id="${p}sticker" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="4.5" result="rim"/><feFlood flood-color="#fffdf8"/><feComposite in2="rim" operator="in" result="paper"/><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#664630" flood-opacity=".18"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>`
+    ].join('');
+    let extra = '', body = '';
+    if (kind === 'burger') {
+      const top = 'M35 107 C33 66 69 39 118 38 C168 37 204 65 205 105 C203 116 39 119 35 107Z';
+      extra = `<clipPath id="${p}bunClip"><path d="${top}"/></clipPath>`;
+      const seeds = [[68,73,-23],[90,57,18],[119,68,-15],[144,54,20],[167,76,32],[49,94,-15],[90,89,38],[138,93,-30],[182,96,18],[110,44,-20],[155,90,4]];
+      body = `<path d="M35 162 Q120 142 205 161 L199 181 Q187 203 121 205 Q52 204 40 183Z" fill="${u('bunBase')}"/><path d="M48 182 Q120 197 192 180" fill="none" stroke="#fbd08b" stroke-width="3" opacity=".65"/><path d="M31 151 Q44 141 61 146 L183 143 Q209 144 210 158 Q209 173 188 176 Q123 185 48 176 Q29 173 31 151Z" fill="${u('patty')}"/><path d="M40 153 Q75 147 105 151 M123 153 Q164 146 198 153" stroke="#a2643b" stroke-width="3" stroke-linecap="round" fill="none"/>${seedDots(14, 38, 39, 149, 159, 23, ['#d59a5b','#3a251d','#a16c48'],.7,1.8)}<path d="M35 136 Q120 124 206 135 L185 156 L159 151 L135 166 L110 146 L79 150 L60 161Z" fill="${u('cheese')}" stroke="#dc9a2f" stroke-width="1"/><path d="M38 132 Q42 118 64 120 L181 119 Q203 121 204 132 Q189 145 120 143 Q60 144 38 132" fill="#c54d39"/><path d="M43 125 Q115 114 196 125" fill="none" stroke="#f58766" stroke-width="5" stroke-linecap="round"/><path d="M28 114 L40 105 L55 111 L69 102 L85 110 L102 102 L118 111 L132 103 L147 112 L164 102 L177 110 L191 104 L211 113 L208 124 L193 121 L178 131 L162 123 L143 132 L125 124 L107 132 L88 124 L70 131 L54 122 L37 128Z" fill="${u('lettuce')}"/><path d="M38 115 Q66 116 88 119 M111 116 Q144 119 165 116 M183 114 L202 117" stroke="#c1dd75" fill="none" stroke-width="2.3" stroke-linecap="round"/><path d="${top}" fill="${u('bun')}" stroke="#cc8a42" stroke-width=".7"/><g clip-path="url(#${p}bunClip)">${seedDots(410,80,39,39,164,78,['#ca8a47','#ffd889','#f8d290'],.4,1.1)}</g><path d="M46 82 Q59 55 96 49" fill="none" stroke="#ffe8bc" stroke-width="3" opacity=".55" stroke-linecap="round"/>${seeds.map(([x,y,a])=>`<ellipse cx="${x}" cy="${y}" rx="3.5" ry="1.5" transform="rotate(${a} ${x} ${y})" fill="#fff0c9" stroke="#c48e49" stroke-width=".35"/>`).join('')}<path d="M42 104 Q119 119 198 102" fill="none" stroke="#b97333" stroke-width="2" opacity=".35"/>`;
+    } else if (kind === 'fries') {
+      const sticks = [[45,65,-13,81],[59,39,-9,101],[75,50,-6,95],[91,30,-3,113],[108,47,0,100],[123,28,5,112],[140,46,7,98],[158,37,13,105],[175,61,18,84],[83,72,-11,74],[138,65,9,85]];
+      body = `<path d="M43 111 Q118 97 198 110 L183 159 L55 157Z" fill="#9d3c2e"/>${sticks.map(([x,y,a,h],i)=>`<g transform="rotate(${a} ${x+7} ${y+h})"><path d="M${x} ${y+2} L${x+10} ${y} L${x+14} ${y+4} L${x+13} ${y+h} L${x+1} ${y+h+2}Z" fill="${u('fry')}" stroke="#d69636" stroke-width=".7"/><path d="M${x+3} ${y+5} L${x+4} ${y+h-5}" stroke="#fff0a1" stroke-width="2" opacity=".65"/><path d="M${x+10} ${y+5} L${x+10} ${y+h-3}" stroke="#cc8b2e" opacity=".4"/>${seedDots(i+9,7,x+1,y+5,10,h-12,['#c9913c','#ffeaa3'],.5,.8)}</g>`).join('')}<path d="M37 109 Q119 145 202 109 L183 194 Q178 208 121 213 Q65 210 58 196Z" fill="${u('red')}"/><path d="M37 109 L57 118 L74 200 Q63 199 58 195Z" fill="#b84436" opacity=".4"/><path d="M46 115 Q120 149 193 116" stroke="#f7b39a" stroke-width="2" fill="none" opacity=".7"/><path d="M64 190 Q121 208 181 191" stroke="#a8322e" stroke-width="1.3" fill="none" opacity=".4"/><path d="M119 151 l4 9 10 1 -8 6 2 10 -8 -5 -9 5 2 -10 -8 -6 11 -1Z" fill="#fff0c7"/><path d="M97 184 Q119 191 143 183" stroke="#fff0c7" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="86" cy="164" r="2" fill="#f6c59f"/><circle cx="158" cy="169" r="2.2" fill="#f6c59f"/>`;
+    } else if (kind === 'cola') {
+      extra = `<clipPath id="${p}cupClip"><path d="M65 61 L80 198 Q82 211 120 212 Q157 211 160 198 L176 61Z"/></clipPath>`;
+      body = `<path d="M65 61 L80 198 Q82 211 120 212 Q157 211 160 198 L176 61Z" fill="${u('glass')}" stroke="#c8bba6" stroke-width="1.5"/><g clip-path="url(#${p}cupClip)"><path d="M65 83 Q121 91 175 81 L165 216 L75 217Z" fill="${u('cola')}"/><ellipse cx="120" cy="84" rx="55" ry="12" fill="#bd804b"/><path d="M72 87 Q120 102 171 86" fill="none" stroke="#dfb37b" stroke-width="2"/><g fill="#e5c292" fill-opacity=".48" stroke="#ffedc5" stroke-opacity=".4"><rect x="81" y="67" width="31" height="28" rx="7" transform="rotate(-13 96 81)"/><rect x="121" y="68" width="33" height="29" rx="6" transform="rotate(17 138 83)"/><rect x="102" y="91" width="29" height="28" rx="5" transform="rotate(16 117 104)"/><rect x="134" y="100" width="28" height="26" rx="6" transform="rotate(-12 148 113)"/></g>${seedDots(618,37,78,111,80,88,['#eab875','#f3d49b'],.5,1.5)}<path d="M78 84 L90 194 Q92 199 101 200" stroke="#fffaf3" opacity=".35" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M162 85 L149 197" stroke="#fffaf3" opacity=".15" stroke-width="2"/></g><path d="M132 102 L149 36 Q150 30 156 28 L183 19" stroke="#e3a073" stroke-width="10" fill="none" stroke-linejoin="round"/><path d="M132 102 L149 36 Q150 30 156 28 L183 19" stroke="#f4d3a5" stroke-width="6.5" fill="none" stroke-linejoin="round"/><ellipse cx="121" cy="61" rx="57" ry="10" fill="none" stroke="#fff9eb" stroke-width="4"/><ellipse cx="121" cy="61" rx="57" ry="10" fill="none" stroke="#cbbba5" stroke-width="1"/><path d="M96 204 Q122 209 146 203" stroke="#fff8e7" stroke-width="2" opacity=".6" fill="none"/><circle cx="164" cy="126" r="3.5" fill="#fff" opacity=".4"/><circle cx="76" cy="110" r="2.4" fill="#fff" opacity=".55"/>`;
+    } else if (kind === 'coffee') {
+      extra = `<clipPath id="${p}latteClip"><path d="M66 67 L79 200 Q83 214 120 216 Q158 214 162 200 L175 67Z"/></clipPath>`;
+      body = `<path d="M66 67 L79 200 Q83 214 120 216 Q158 214 162 200 L175 67Z" fill="${u('glass')}" stroke="#d9c8ae" stroke-width="1.2"/><g clip-path="url(#${p}latteClip)"><path d="M63 88 Q120 94 178 88 L166 218 L73 218Z" fill="${u('latte')}"/><path d="M75 99 Q96 115 92 130 T111 155 Q116 176 103 185 M140 97 Q127 122 143 144 T139 178" stroke="#8f5a37" stroke-width="9" fill="none" opacity=".18"/><path d="M86 134 Q113 167 154 146 M84 156 Q118 184 155 162" stroke="#fff0d5" stroke-width="7" fill="none" opacity=".38"/><ellipse cx="121" cy="89" rx="53" ry="12" fill="#bd8a5b"/><g fill="#f6dfb7" fill-opacity=".5" stroke="#fff1d5" stroke-width="1" stroke-opacity=".6"><rect x="82" y="76" width="28" height="25" rx="5" transform="rotate(-11 96 89)"/><rect x="119" y="76" width="32" height="27" rx="6" transform="rotate(18 135 89)"/><rect x="102" y="101" width="29" height="23" rx="5" transform="rotate(8 116 112)"/></g><path d="M80 89 L91 196" stroke="#fff9ed" opacity=".55" stroke-width="4" stroke-linecap="round"/><path d="M160 94 L150 201" stroke="#fff9ed" opacity=".28" stroke-width="2"/></g><path d="M139 114 L149 28" stroke="#8a5f43" stroke-width="8" stroke-linecap="round"/><path d="M140 112 L150 29" stroke="#c1976c" stroke-width="3" stroke-linecap="round"/><ellipse cx="121" cy="67" rx="56" ry="10" fill="#fffbf0" fill-opacity=".65" stroke="#d5c6b0" stroke-width="1.2"/><ellipse cx="121" cy="65" rx="59" ry="9" fill="none" stroke="#fffbf2" stroke-width="4"/><path d="M88 145 Q122 155 155 145 L151 174 Q122 185 91 174Z" fill="#f9ead1" opacity=".9"/><ellipse cx="122" cy="164" rx="8" ry="11" transform="rotate(28 122 164)" fill="#996c4e"/><path d="M123 154 Q117 163 122 173" fill="none" stroke="#ecd5af" stroke-width="1.5"/><circle cx="157" cy="124" r="2.8" fill="#fff" opacity=".45"/>`;
+    } else if (kind === 'nuggets') {
+      const shapes = [
+        { d:'M56 110 C42 99 43 76 55 65 C66 52 83 56 93 68 C105 79 101 99 89 111 C80 120 67 119 56 110Z',seed:21, b:[44,55,60,66] },
+        { d:'M105 85 C101 70 109 54 127 54 C142 51 157 60 160 74 C168 89 153 105 136 106 C119 111 108 100 105 85Z',seed:22, b:[103,51,60,59] },
+        { d:'M159 93 C163 77 186 77 196 88 C207 95 210 115 198 127 C187 143 166 140 157 124 C152 113 153 103 159 93Z',seed:23, b:[152,77,58,66] },
+        { d:'M62 128 C66 111 89 105 103 117 C121 128 118 145 105 155 C92 168 69 161 62 145 C57 139 59 133 62 128Z',seed:24, b:[58,108,63,56] },
+        { d:'M118 131 C123 113 142 108 156 119 C170 124 177 145 164 157 C155 175 132 170 121 157 C115 149 112 140 118 131Z',seed:25, b:[112,110,62,65] }
+      ];
+      extra = shapes.map((s,i)=>`<clipPath id="${p}n${i}"><path d="${s.d}"/></clipPath>`).join('');
+      body = `<path d="M32 112 L70 58 Q121 40 174 56 L211 111 L187 177 L57 180Z" fill="${u('paper')}" stroke="#d8c6a4"/><path d="M36 113 Q121 94 210 111 L188 176 Q120 202 57 178Z" fill="#d1b287"/><path d="M45 111 L65 77 Q116 63 182 77 L199 111" fill="#fff9ed"/><path d="M51 105 L75 84 M167 82 L192 103" stroke="#ead7b6" stroke-width="2"/>${shapes.map((s,i)=>`<path d="${s.d}" fill="${u('crust')}" stroke="#b87831" stroke-width="1.2"/><g clip-path="url(#${p}n${i})">${seedDots(s.seed,22,...s.b,['#f7ce79','#b86e2a','#ffe6a2','#a96029'],.6,2.1)}</g><path d="${s.d}" fill="none" stroke="#f8d187" stroke-width="1" stroke-dasharray="2 10" opacity=".8"/>`).join('')}<path d="M33 117 Q60 135 70 143 Q122 161 174 144 Q194 130 209 116 L193 184 Q166 210 119 212 Q75 209 49 184Z" fill="${u('paper')}" stroke="#ddc8a5"/><path d="M35 120 L51 179 L70 190 L58 136Z" fill="#e9d8bc"/><path d="M57 173 Q119 201 188 172" stroke="#d7a67e" stroke-width="1.5" fill="none" stroke-dasharray="3 5"/><path d="M108 172 l12 -7 12 7 -12 7Z" fill="#d27854"/><path d="M111 183 L129 183" stroke="#d27854" stroke-width="2" stroke-linecap="round"/>`;
+    } else if (kind === 'icecream') {
+      body = `<path d="M75 141 L91 202 Q95 216 121 218 Q148 217 152 202 L169 141Z" fill="${u('paper')}" stroke="#dcc8a5"/><path d="M84 169 Q120 181 162 169 L157 189 Q120 201 89 189Z" fill="#d89478"/><path d="M100 190 L106 213 M144 191 L139 213" stroke="#e5d5b9" stroke-width="1.2"/><ellipse cx="122" cy="142" rx="48" ry="12" fill="#ddc2a0"/><path d="M77 140 C66 127 76 109 92 105 C76 96 87 78 104 74 C92 62 109 45 122 43 C119 34 129 24 140 22 C130 41 150 44 146 61 C166 68 167 83 154 91 C180 98 177 117 163 122 C181 137 163 153 122 155 C99 156 85 150 77 140Z" fill="${u('cream')}" stroke="#e7cfaa" stroke-width="1"/><path d="M91 105 Q121 117 159 103" fill="none" stroke="#e4ca9f" stroke-width="3" stroke-linecap="round"/><path d="M80 128 Q118 143 167 128" fill="none" stroke="#ead4af" stroke-width="3.5" stroke-linecap="round"/><path d="M102 77 Q127 88 151 76" fill="none" stroke="#e6cea8" stroke-width="2.8" stroke-linecap="round"/><path d="M122 45 Q136 55 144 52" fill="none" stroke="#e3c99f" stroke-width="2.5" stroke-linecap="round"/><path d="M89 121 Q102 117 115 122 M99 92 Q112 88 128 91 M114 63 L123 61" stroke="#fffdf5" stroke-width="4" stroke-linecap="round" opacity=".9"/><ellipse cx="122" cy="145" rx="48" ry="11" fill="none" stroke="#fdf4e3" stroke-width="3"/><path d="M121 175 l3 6 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1Z" fill="#fff4db"/>`;
+    } else if (kind === 'pie') {
+      const pastry = 'M79 34 Q84 25 96 28 L160 42 Q173 44 171 56 L151 172 Q149 183 138 182 L69 168 Q58 166 61 153Z';
+      extra = `<clipPath id="${p}pieClip"><path d="${pastry}"/></clipPath>`;
+      body = `<path d="M53 113 L185 136 L168 208 Q119 221 66 196Z" fill="${u('paper')}" stroke="#d7c3a5"/><path d="M53 113 L107 133 L185 136 L165 166 L75 150Z" fill="#e4cbaa"/><path d="${pastry}" fill="${u('crust')}" stroke="#b67731" stroke-width="1.4"/><g clip-path="url(#${p}pieClip)">${seedDots(333,120,58,27,118,159,['#ffe0a0','#f6c772','#b77730','#a86628'],.6,1.9)}<path d="M88 34 L69 159 M160 50 L141 173" stroke="#f6cb7e" stroke-width="5" stroke-dasharray="1 6" stroke-linecap="round"/><path d="M90 36 L71 160 M158 52 L140 173" stroke="#b77830" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/><path d="M99 62 L140 71 M94 89 L135 98 M89 116 L130 125" stroke="#9e5b26" stroke-width="3.2" stroke-linecap="round"/><path d="M100 64 L140 73 M95 91 L135 100 M90 118 L130 127" stroke="#f7cc7c" stroke-width="2.2" stroke-linecap="round"/></g><path d="M54 128 L111 151 L180 148 L166 208 Q116 216 65 194Z" fill="${u('paper')}" stroke="#dfceb2"/><path d="M54 128 L65 194 L78 200 L72 145Z" fill="#e6d4b9"/><path d="M78 174 Q115 188 155 181" stroke="#c9845d" stroke-width="1.6" stroke-dasharray="3 4" fill="none"/><path d="M109 177 C98 172 103 160 110 164 C114 154 125 161 122 168 C136 167 135 181 125 183Z" fill="#c57750" transform="translate(6 8) rotate(-8 117 174)"/><path d="M118 169 Q119 162 124 160" stroke="#99734c" stroke-width="2" fill="none"/>`;
+    } else {
+      const muffin = 'M44 99 C41 74 67 50 115 47 C164 44 195 68 199 93 C202 108 166 119 122 120 C77 121 46 111 44 99Z';
+      extra = `<clipPath id="${p}muffinClip"><path d="${muffin}"/></clipPath>`;
+      body = `<path d="M46 153 Q124 137 197 151 L193 177 Q181 199 125 201 Q64 202 48 181Z" fill="${u('bunBase')}"/><path d="M50 175 Q119 191 191 173" stroke="#f8d59c" stroke-width="4" fill="none" opacity=".7"/><path d="M42 148 Q47 135 69 136 L175 132 Q195 134 201 147 Q205 162 182 171 Q120 185 59 171 Q39 163 42 148Z" fill="${u('patty')}"/>${seedDots(512,40,53,145,137,21,['#b88653','#d1a46d','#503329'],.7,1.4)}<path d="M39 128 Q117 112 201 128 L181 145 L151 144 L128 160 L100 144 L73 154 L55 143Z" fill="${u('cheese')}"/><path d="M45 117 Q47 105 62 107 Q76 94 90 102 Q110 91 126 101 Q146 90 164 104 Q185 98 198 112 Q209 123 192 134 Q176 145 161 137 Q142 146 126 137 Q105 148 87 138 Q65 144 51 133 Q38 128 45 117Z" fill="${u('egg')}" stroke="#ddccaa" stroke-width=".8"/><ellipse cx="127" cy="119" rx="32" ry="16" fill="${u('yolk')}"/><path d="M107 114 Q119 106 134 111" fill="none" stroke="#fff1b1" stroke-width="2.5" stroke-linecap="round"/><path d="${muffin}" fill="${u('bun')}" stroke="#c5975d" stroke-width=".8"/><g clip-path="url(#${p}muffinClip)"><ellipse cx="122" cy="76" rx="60" ry="20" fill="#f4dba9" opacity=".45"/>${seedDots(405,100,41,45,163,80,['#ba8549','#fff0c8','#e2b77b','#b78043'],.5,1.8)}<path d="M69 79 Q79 66 93 69 M114 61 L130 60 M150 70 Q168 72 173 83 M85 99 L101 102 M141 103 L157 99" fill="none" stroke="#be8b4f" stroke-width="2.8" stroke-linecap="round" opacity=".4"/></g><path d="M55 97 Q120 121 190 96" stroke="#e4b66c" stroke-width="2" fill="none"/>`;
+    }
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 240 240" role="img" aria-label="${kind} 原创食物贴纸"><defs>${gradients}${extra}</defs><g filter="${u('sticker')}">${body}</g></svg>`;
+  }
+  function url(kind) { return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg(kind, 240)); }
+  function scene(kind) {
+    if (!kinds.includes(kind)) kind = 'burger';
+    const p = `ks${++serial}_`;
+    const palettes = {
+      burger:['#e4b58a','#f5dfbb','#bc7555'], fries:['#e1bb91','#f5e2c7','#a86c53'], cola:['#c3ccb5','#edf0d6','#668c77'], coffee:['#c2a98e','#e9dbc4','#8e6d51'], nuggets:['#d8b591','#eee1c5','#bd7e50'], icecream:['#e4c3bd','#f6e5d9','#b48579'], pie:['#c9baa0','#ece4d1','#8d9576'], breakfast:['#dfcaa2','#f7ebce','#a4976a']
+    };
+    const [bg,light,accent] = palettes[kind];
+    const side = ['coffee','cola','icecream'].includes(kind) ? 'pie' : kind === 'breakfast' ? 'coffee' : 'cola';
+    const nested = (k,x,y,w,angle) => `<g transform="translate(${x} ${y}) rotate(${angle} ${w/2} ${w/2})">${svg(k,w)}</g>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450" role="img" aria-label="原创示例餐桌插画，并非真实照片"><defs><linearGradient id="${p}table" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${light}"/><stop offset="1" stop-color="${bg}"/></linearGradient><pattern id="${p}cloth" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><rect width="44" height="44" fill="none"/><path d="M0 0H44 M0 0V44" stroke="${accent}" stroke-opacity=".16" stroke-width="2"/><path d="M4 0V44 M0 4H44" stroke="#fffaf0" stroke-opacity=".3"/></pattern><filter id="${p}paper"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#735337" flood-opacity=".14"/></filter><linearGradient id="${p}shade"><stop stop-color="#fff9e9" stop-opacity=".65"/><stop offset="1" stop-color="#fff9e9" stop-opacity="0"/></linearGradient></defs><rect width="600" height="450" fill="url(#${p}table)"/><rect width="600" height="450" fill="url(#${p}cloth)"/><path d="M-25 19 L241 -15 L533 450 L375 470Z" fill="url(#${p}shade)"/><g transform="rotate(-8 287 243)" filter="url(#${p}paper)"><rect x="76" y="97" width="412" height="291" rx="3" fill="#fcf6e8"/><rect x="90" y="111" width="384" height="262" rx="2" fill="none" stroke="${accent}" stroke-opacity=".24" stroke-dasharray="3 6"/><path d="M98 133 H163 M98 140 H138" stroke="${accent}" stroke-width="2" stroke-linecap="round" opacity=".32"/><path d="M407 340 l4 -9 4 9 10 2 -8 6 1 10 -7 -5 -9 4 3 -10 -7 -7Z" fill="${accent}" opacity=".22"/></g><ellipse cx="268" cy="296" rx="137" ry="58" fill="#9a7759" opacity=".09"/>${nested(side,344,51,185,10)}${nested(kind,116,107,272,-10)}<g transform="translate(49 312) rotate(-17)"><path d="M0 0 L86 2 L83 73 L-1 69Z" fill="#fffaf0" filter="url(#${p}paper)"/><path d="M11 15 H68 M11 23 H55 M11 31 H65 M11 48 H28 M43 48 H65 M12 59 H64" stroke="#a69277" stroke-width="1.5" opacity=".4"/><path d="M10 39 H67" stroke="#bbaa92" stroke-dasharray="2 3"/></g><path d="M512 319 l4 9 10 2 -8 6 1 10 -8 -6 -9 4 3 -10 -6 -8 10 1Z" fill="${accent}" opacity=".5"/><circle cx="488" cy="355" r="3" fill="${accent}" opacity=".45"/><circle cx="533" cy="281" r="2" fill="${accent}" opacity=".35"/><path d="M78 73 q7 -9 15 -1 M88 64 l3 -9" stroke="${accent}" stroke-width="2" stroke-linecap="round" fill="none" opacity=".45"/></svg>`;
+  }
+  window.KeepsArt = { svg, url, scene };
+})();
+// 所有餐品、贴纸和餐桌场景均为原创示例插画，并非真实照片，也不代表官方餐品外观。
+
+/*
+ * KeepsMotion — original, dependency-free sticker tray.
+ * mount(container, { items: [{ id, src, label }], onSelect(id), reducedMotion? })
+ * mounts at most 18 local SVG/photo images. Returns cleanup(), with cleanup.shake().
+ * The tray owns only its descendants and its km-tray class. Call cleanup before
+ * remounting. Pointer drag throws stickers; a tap or Enter/Space selects one.
+ * Motion sleeps after settling. Reduced motion uses a static, clickable layout.
+ */
+(function () {
+  'use strict';
+
+  const instances = new WeakMap();
+  const clamp = (n, min, max) => Math.min(Math.max(n, min), Math.max(min, max));
+  const random = (min, max) => min + Math.random() * (max - min);
+
+  function mount(container, options) {
+    if (!(container instanceof HTMLElement)) throw new TypeError('KeepsMotion needs a container element.');
+    if (instances.has(container)) instances.get(container)();
+
+    const config = options || {};
+    const items = (Array.isArray(config.items) ? config.items : []).slice(0, 18);
+    const onSelect = typeof config.onSelect === 'function' ? config.onSelect : function () {};
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reduced = Boolean(config.reducedMotion) || preference.matches;
+    let disposed = false;
+    let frameId = 0;
+    let previousTime = 0;
+    let lastActivity = performance.now();
+    let quietFrames = 0;
+    let width = 1;
+    let height = 1;
+    let active = null;
+    let pointerId = null;
+    let pointerStart = null;
+    let pointerPrevious = null;
+    let pointerOffset = null;
+    let dragged = false;
+    let tapTimer = 0;
+    let topZ = 2;
+    const bodies = [];
+    const byNode = new WeakMap();
+    const rootHadClass = container.classList.contains('km-tray');
+    container.classList.add('km-tray');
+    container.classList.toggle('km-reduced', reduced);
+
+    const decor = document.createElement('div');
+    decor.className = 'km-tray-decoration';
+    decor.setAttribute('aria-hidden', 'true');
+    decor.innerHTML = '<span class="km-tray-star km-tray-star-one">✳</span><span class="km-tray-star km-tray-star-two">✧</span><span class="km-tray-word">little moments, kept.</span>';
+    container.replaceChildren(decor);
+
+    items.forEach(function (item, index) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'km-sticker';
+      button.setAttribute('aria-label', '查看' + (item.label || '这段回忆'));
+      button.dataset.stickerId = String(item.id);
+      const art = document.createElement('span');
+      art.className = 'km-sticker-art';
+      const img = document.createElement('img');
+      img.src = item.src || '';
+      img.alt = '';
+      img.draggable = false;
+      art.appendChild(img);
+      const tag = document.createElement('span');
+      tag.className = 'km-sticker-label';
+      tag.textContent = item.label || '小小的好时光';
+      button.append(art, tag);
+      button.style.zIndex = String(index + 2);
+      container.appendChild(button);
+      const body = {
+        id: item.id, el: button, index: index,
+        x: 0, y: 0, vx: 0, vy: 0, angle: random(-0.24, 0.24), spin: 0,
+        radius: 35, size: 80, dragVX: 0, dragVY: 0
+      };
+      bodies.push(body);
+      byNode.set(button, body);
+    });
+
+    if (!items.length) {
+      const empty = document.createElement('p');
+      empty.className = 'km-empty';
+      empty.textContent = '第一张回忆贴纸，等你来放。';
+      container.appendChild(empty);
+    }
+
+    function measure() {
+      const bounds = container.getBoundingClientRect();
+      width = Math.max(bounds.width, 1);
+      height = Math.max(bounds.height, 1);
+    }
+
+    function paint() {
+      bodies.forEach(function (body) {
+        body.el.style.transform = 'translate3d(' + (body.x - body.size / 2).toFixed(2) + 'px,' + (body.y - body.size / 2).toFixed(2) + 'px,0) rotate(' + body.angle.toFixed(3) + 'rad)';
+      });
+    }
+
+    function layout(initial) {
+      const oldWidth = width;
+      const oldHeight = height;
+      measure();
+      const baseSize = clamp(width / 4.7, 64, 104);
+      const columns = Math.max(2, Math.min(items.length || 2, Math.floor((width - 20) / (baseSize * 0.87))));
+      const rows = Math.max(1, Math.ceil(bodies.length / columns));
+      bodies.forEach(function (body, index) {
+        body.size = baseSize * (0.89 + (index % 4) * 0.055);
+        body.radius = body.size * 0.38;
+        body.el.style.width = body.size + 'px';
+        body.el.style.height = body.size + 'px';
+        if (reduced || initial) {
+          const col = index % columns;
+          const row = Math.floor(index / columns);
+          const cellWidth = (width - 26) / columns;
+          const rowGap = reduced ? Math.min((height - 50) / rows, baseSize * 0.9) : Math.min(baseSize * 0.72, 65);
+          const yStart = reduced ? (height - rowGap * (rows - 1)) / 2 : body.radius + 14;
+          body.x = 13 + cellWidth * (col + 0.5) + (row % 2 ? cellWidth * 0.12 : -cellWidth * 0.06);
+          body.y = yStart + row * rowGap;
+          body.x = clamp(body.x, body.radius + 6, width - body.radius - 6);
+          body.y = clamp(body.y, body.radius + 6, height - body.radius - 6);
+          body.vx = reduced ? 0 : random(-34, 34);
+          body.vy = reduced ? 0 : random(5, 50);
+          body.spin = reduced ? 0 : random(-0.75, 0.75);
+          body.angle = ((index * 7) % 13 - 6) * 0.035;
+        } else {
+          body.x = clamp(body.x / oldWidth * width, body.radius + 6, width - body.radius - 6);
+          body.y = clamp(body.y / oldHeight * height, body.radius + 6, height - body.radius - 6);
+        }
+      });
+      paint();
+      if (!reduced) wake();
+    }
+
+    function bounds(body) {
+      const r = body.radius + 7;
+      if (body.x < r) { body.x = r; body.vx = Math.abs(body.vx) * 0.38; body.spin *= 0.8; }
+      if (body.x > width - r) { body.x = width - r; body.vx = -Math.abs(body.vx) * 0.38; body.spin *= 0.8; }
+      if (body.y < r) { body.y = r; body.vy = Math.abs(body.vy) * 0.28; }
+      if (body.y > height - r) {
+        body.y = height - r;
+        body.vy = Math.abs(body.vy) < 54 ? 0 : -Math.abs(body.vy) * 0.22;
+        body.vx *= 0.82;
+        body.spin *= 0.77;
+      }
+    }
+
+    function physics(dt) {
+      const held = dragged ? active : null;
+      bodies.forEach(function (body) {
+        if (body === held) return;
+        body.vy += 960 * dt;
+        body.vx *= Math.pow(0.984, dt * 60);
+        body.vy *= Math.pow(0.997, dt * 60);
+        body.spin *= Math.pow(0.977, dt * 60);
+        body.x += body.vx * dt;
+        body.y += body.vy * dt;
+        body.angle += body.spin * dt;
+        bounds(body);
+      });
+      for (let pass = 0; pass < 4; pass++) {
+        for (let a = 0; a < bodies.length; a++) {
+          for (let b = a + 1; b < bodies.length; b++) {
+            const first = bodies[a];
+            const second = bodies[b];
+            let dx = second.x - first.x;
+            let dy = second.y - first.y;
+            let distance = Math.hypot(dx, dy);
+            const minimum = first.radius + second.radius;
+            if (distance >= minimum) continue;
+            if (distance < 0.01) { dx = 0.01; dy = 0.02; distance = Math.hypot(dx, dy); }
+            const nx = dx / distance;
+            const ny = dy / distance;
+            const overlap = minimum - distance;
+            const firstWeight = first === held ? 0 : 1;
+            const secondWeight = second === held ? 0 : 1;
+            const weights = firstWeight + secondWeight;
+            if (!weights) continue;
+            first.x -= nx * overlap * firstWeight / weights;
+            first.y -= ny * overlap * firstWeight / weights;
+            second.x += nx * overlap * secondWeight / weights;
+            second.y += ny * overlap * secondWeight / weights;
+            const firstVX = first === held ? clamp(first.dragVX, -800, 800) : first.vx;
+            const firstVY = first === held ? clamp(first.dragVY, -800, 800) : first.vy;
+            const secondVX = second === held ? clamp(second.dragVX, -800, 800) : second.vx;
+            const secondVY = second === held ? clamp(second.dragVY, -800, 800) : second.vy;
+            const relative = (secondVX - firstVX) * nx + (secondVY - firstVY) * ny;
+            if (relative < 0) {
+              const impulse = -1.16 * relative / weights;
+              first.vx -= impulse * nx * firstWeight;
+              first.vy -= impulse * ny * firstWeight;
+              second.vx += impulse * nx * secondWeight;
+              second.vy += impulse * ny * secondWeight;
+              if (pass === 0) {
+                first.spin += clamp(-ny * impulse * 0.0008, -0.09, 0.09) * firstWeight;
+                second.spin += clamp(ny * impulse * 0.0008, -0.09, 0.09) * secondWeight;
+              }
+            }
+            if (pass === 3) {
+              if (first !== held) { first.vx *= 0.975; first.spin *= 0.96; bounds(first); }
+              if (second !== held) { second.vx *= 0.975; second.spin *= 0.96; bounds(second); }
+            }
+          }
+        }
+      }
+    }
+
+    function tick(now) {
+      frameId = 0;
+      if (disposed || reduced) return;
+      const dt = previousTime ? Math.min((now - previousTime) / 1000, 0.033) : 1 / 60;
+      previousTime = now;
+      physics(dt / 2);
+      physics(dt / 2);
+      paint();
+      const quiet = bodies.every(function (body) { return Math.abs(body.vx) < 6 && Math.abs(body.vy) < 22 && Math.abs(body.spin) < 0.08; });
+      quietFrames = quiet && !active ? quietFrames + 1 : 0;
+      const settled = !active && (quietFrames > 40 || now - lastActivity > 6800);
+      if (settled) {
+        previousTime = 0;
+        bodies.forEach(function (body) { body.vx = 0; body.vy = 0; body.spin = 0; });
+        container.classList.remove('km-moving');
+      } else frameId = requestAnimationFrame(tick);
+    }
+
+    function wake() {
+      if (disposed || reduced || !bodies.length) return;
+      quietFrames = 0;
+      lastActivity = performance.now();
+      container.classList.add('km-moving');
+      if (!frameId) { previousTime = 0; frameId = requestAnimationFrame(tick); }
+    }
+
+    function point(event) {
+      const rect = container.getBoundingClientRect();
+      return { x: event.clientX - rect.left, y: event.clientY - rect.top, time: performance.now() };
+    }
+
+    function select(body) {
+      if (!body || disposed) return;
+      bodies.forEach(function (other) { other.el.classList.remove('km-selected'); });
+      body.el.classList.add('km-selected');
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(function () { if (!disposed) body.el.classList.remove('km-selected'); }, 420);
+      onSelect(body.id);
+    }
+
+    function down(event) {
+      if (active || event.button !== 0 || event.isPrimary === false) return;
+      const node = event.target.closest('.km-sticker');
+      const body = node && byNode.get(node);
+      if (!body) return;
+      active = body;
+      pointerId = event.pointerId;
+      pointerStart = point(event);
+      pointerPrevious = pointerStart;
+      pointerOffset = { x: pointerStart.x - body.x, y: pointerStart.y - body.y };
+      dragged = false;
+      body.dragVX = 0;
+      body.dragVY = 0;
+      body.el.style.zIndex = String(++topZ + bodies.length);
+      container.setPointerCapture(event.pointerId);
+      if (!reduced) wake();
+    }
+
+    function move(event) {
+      if (!active || event.pointerId !== pointerId || reduced) return;
+      const next = point(event);
+      if (!dragged && Math.hypot(next.x - pointerStart.x, next.y - pointerStart.y) < 6) return;
+      dragged = true;
+      active.el.classList.add('km-dragging');
+      const dt = Math.max((next.time - pointerPrevious.time) / 1000, 0.008);
+      active.dragVX = active.dragVX * 0.48 + clamp((next.x - pointerPrevious.x) / dt, -1600, 1600) * 0.52;
+      active.dragVY = active.dragVY * 0.48 + clamp((next.y - pointerPrevious.y) / dt, -1600, 1600) * 0.52;
+      active.x = clamp(next.x - pointerOffset.x, active.radius + 7, width - active.radius - 7);
+      active.y = clamp(next.y - pointerOffset.y, active.radius + 7, height - active.radius - 7);
+      active.vx = 0;
+      active.vy = 0;
+      active.spin = 0;
+      active.angle += clamp(active.dragVX * 0.000013, -0.025, 0.025);
+      pointerPrevious = next;
+      wake();
+      paint();
+      event.preventDefault();
+    }
+
+    function release(event) {
+      if (!active || event.pointerId !== pointerId) return;
+      const body = active;
+      const didDrag = dragged;
+      const cancelled = event.type === 'pointercancel' || event.type === 'lostpointercapture';
+      if (didDrag) {
+        const fresh = performance.now() - pointerPrevious.time < 110;
+        body.vx = fresh ? clamp(body.dragVX * 0.72, -1100, 1100) : 0;
+        body.vy = fresh ? clamp(body.dragVY * 0.72, -1100, 1100) : 0;
+        body.spin = clamp(body.vx * 0.003, -2, 2);
+      }
+      body.el.classList.remove('km-dragging');
+      active = null;
+      dragged = false;
+      pointerId = null;
+      if (container.hasPointerCapture(event.pointerId)) container.releasePointerCapture(event.pointerId);
+      if (!didDrag && !cancelled) select(body);
+      if (!reduced) wake();
+    }
+
+    function click(event) {
+      const node = event.target.closest('.km-sticker');
+      if (!node) return;
+      // Pointer taps are handled above, so drag release never becomes a click.
+      if (event.detail === 0) select(byNode.get(node));
+    }
+
+    function preventNativeDrag(event) { event.preventDefault(); }
+
+    function shake() {
+      if (disposed || !bodies.length) return;
+      if (reduced) { layout(true); return; }
+      bodies.forEach(function (body, index) {
+        if (body === active) return;
+        body.vx = random(-210, 210) + (index % 2 ? 60 : -60);
+        body.vy = random(-690, -420);
+        body.spin = random(-2.4, 2.4);
+      });
+      wake();
+    }
+
+    function preferenceChanged() {
+      reduced = Boolean(config.reducedMotion) || preference.matches;
+      container.classList.toggle('km-reduced', reduced);
+      if (frameId) cancelAnimationFrame(frameId);
+      frameId = 0;
+      previousTime = 0;
+      container.classList.remove('km-moving');
+      layout(true);
+    }
+
+    let measuredWidth = 0;
+    let measuredHeight = 0;
+    const resizeObserver = new ResizeObserver(function () {
+      const rect = container.getBoundingClientRect();
+      if (Math.abs(rect.width - measuredWidth) < 0.5 && Math.abs(rect.height - measuredHeight) < 0.5) return;
+      measuredWidth = rect.width;
+      measuredHeight = rect.height;
+      layout(false);
+    });
+
+    container.addEventListener('pointerdown', down);
+    container.addEventListener('pointermove', move, { passive: false });
+    container.addEventListener('pointerup', release);
+    container.addEventListener('pointercancel', release);
+    container.addEventListener('lostpointercapture', release);
+    container.addEventListener('click', click);
+    container.addEventListener('dragstart', preventNativeDrag);
+    preference.addEventListener('change', preferenceChanged);
+    layout(true);
+    measuredWidth = width;
+    measuredHeight = height;
+    resizeObserver.observe(container);
+
+    function cleanup() {
+      if (disposed) return;
+      disposed = true;
+      if (frameId) cancelAnimationFrame(frameId);
+      clearTimeout(tapTimer);
+      resizeObserver.disconnect();
+      container.removeEventListener('pointerdown', down);
+      container.removeEventListener('pointermove', move);
+      container.removeEventListener('pointerup', release);
+      container.removeEventListener('pointercancel', release);
+      container.removeEventListener('lostpointercapture', release);
+      container.removeEventListener('click', click);
+      container.removeEventListener('dragstart', preventNativeDrag);
+      preference.removeEventListener('change', preferenceChanged);
+      if (pointerId !== null && container.hasPointerCapture(pointerId)) container.releasePointerCapture(pointerId);
+      container.classList.remove('km-reduced', 'km-moving');
+      if (!rootHadClass) container.classList.remove('km-tray');
+      container.replaceChildren();
+      instances.delete(container);
+    }
+    cleanup.shake = shake;
+    instances.set(container, cleanup);
+    return cleanup;
+  }
+
+  window.KeepsMotion = {
+    mount: mount,
+    shake: function (container) {
+      const cleanup = instances.get(container);
+      if (cleanup) cleanup.shake();
+    }
+  };
+})();
+
+(()=>{
+ 'use strict';
+ const kinds={burger:'汉堡',fries:'薯条',cola:'气泡可乐',coffee:'咖啡',nuggets:'鸡块',icecream:'冰淇淋',pie:'苹果派',breakfast:'早餐'};
+ const titles=['假期的第一口快乐','雨天，也要热乎乎','先吃一根，再出发','落日配一杯可乐','终于等到周五','今天的甜，刚刚好','晨光里的一份早餐','老地方，老朋友','迟到的下午茶','周末就慢一点','让今天酥脆一点','属于下午的小奖励'];
+ const notes=['不用赶路的日子，连第一口都可以慢慢吃。','外面下着小雨。握着杯子坐了一会儿，心情也暖起来。','出门前顺路买了一份。热热的，脆脆的，今天也会很好。','回家的路上天色很好，就这样歇一会儿吧。','忙完了这一周，给自己放一个小小的假。','和朋友分着吃，快乐也变成了两份。','今天比闹钟早醒十分钟，刚好留给早餐。','聊到薯条都快凉了，还是舍不得走。','路过的时候闻到了香气，决定不再犹豫。','一本书、一杯咖啡。把时间借给自己。','阳光落在桌角，薯条还是刚出锅的温度。\n今天的小快乐，就收在这一页里。','不需要特别的理由，普通的一天也值得有一点甜。'];
+ const seeds=['2026-10-01','2026-10-03','2026-10-05','2026-10-07','2026-10-09','2026-10-11','2026-10-12','2026-10-14','2026-10-16','2026-10-17','2026-10-18','2026-10-18'];
+ const types=['burger','coffee','fries','cola','nuggets','icecream','breakfast','burger','pie','coffee','fries','icecream'];
+ const seedEntries=()=>[
+ ...seeds.map((date,i)=>({id:'sample-oct-'+i,space:'demo',date,kind:types[i],title:titles[i],note:notes[i],mood:['很满足','慢慢来','小确幸'][i%3],amount:[26,12,14,10,18,9,16,32,8,12,14,9][i],photo:null,template:i%3===1?'receipt':'polaroid',personalItems:[kinds[types[i]]],isExample:true,createdAt:date+'T12:00:00+08:00'})),
+ ...['01','08','17','24','29'].map((d,i)=>({id:'sample-sep-'+i,space:'demo',date:'2026-09-'+d,kind:types[(i+1)%8],title:['开学后的第一餐','生活里的小小充电站','雨停了，吃点好的','和你一起的星期四','九月的最后一点甜'][i],note:'把普通的一餐，也留成一段小小的回忆。',mood:'小确幸',amount:18+i*2,photo:null,template:'polaroid',personalItems:[kinds[types[(i+1)%8]]],isExample:true,createdAt:'2026-09-'+d+'T12:00:00+08:00'})),
+ ...['2026-07-11','2026-08-04','2026-08-22'].map((d,i)=>({id:'sample-older-'+i,space:'demo',date:d,kind:['cola','burger','icecream'][i],title:'把夏天装进这一页',note:'那天的风很轻，这一口也记得。',mood:'小确幸',amount:15,photo:null,template:'polaroid',personalItems:['夏日小食'],isExample:true,createdAt:d+'T12:00:00+08:00'}))];
+ const orders=[{id:'DEMO-1018-A',date:'2026-10-18',title:'双人午餐 · 示例订单',amount:52,items:[{name:'鸡肉汉堡',kind:'burger'},{name:'中份薯条',kind:'fries'},{name:'可乐',kind:'cola'}]},{id:'DEMO-1017-B',date:'2026-10-17',title:'午后时光 · 示例订单',amount:20,items:[{name:'拿铁咖啡',kind:'coffee'},{name:'苹果派',kind:'pie'}]}];
+ let dbPromise;
+ function db(){if(!dbPromise)dbPromise=new Promise((resolve,reject)=>{const req=indexedDB.open('mc-keeps-v1',1);req.onupgradeneeded=()=>req.result.createObjectStore('kv');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});return dbPromise;}
+ async function read(){const d=await db();return new Promise((resolve,reject)=>{const tx=d.transaction('kv','readonly'),req=tx.objectStore('kv').get('entries');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+ async function write(entries){const d=await db();return new Promise((resolve,reject)=>{const tx=d.transaction('kv','readwrite');tx.objectStore('kv').put(entries,'entries');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
+ const icons={calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18M8 15h1m6 0h1m-8 3h1"/>',box:'<path d="M4 8l8-5 8 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M4 8l8 5 8-5m-8 5v8M8 6l8 5"/>',book:'<path d="M4 4h13a3 3 0 0 1 3 3v14H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm3 0v17m4-12h5m-5 4h4M3 17h4"/>',plus:'<path d="M12 5v14M5 12h14"/>',left:'<path d="m14 6-6 6 6 6"/>',right:'<path d="m10 6 6 6-6 6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/>',upload:'<path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/>',camera:'<path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/>',edit:'<path d="m5 15 11-11 4 4L9 19l-5 1Z"/><path d="m13 7 4 4"/>',heart:'<path d="M12 21 4 13C-3 5 8 0 12 7c4-7 15-2 8 6Z"/>',play:'<path d="m8 5 12 7-12 7Z"/>',pause:'<path d="M8 5v14M16 5v14"/>',spark:'<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',photo:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 5 5 3-3 4 4"/>',smile:'<circle cx="12" cy="12" r="9"/><path d="M8 14a4 4 0 0 0 8 0M8 9h.1M16 9h.1"/>',check:'<path d="m5 12 4 4 10-10"/>'};
+ function icon(name){return '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">'+(icons[name]||icons.spark)+'</svg>';}
+ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+ function dateValid(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const [y,m,d]=value.split('-').map(Number);return y>=1900&&y<=2200&&new Date(y,m-1,d).getFullYear()===y&&new Date(y,m-1,d).getMonth()===m-1&&new Date(y,m-1,d).getDate()===d;}
+ window.KeepsData={kinds,orders,seedEntries,read,write,icon,esc,dateValid};
+})();
+
+(()=>{
+ 'use strict';
+ const D=window.KeepsData,A=window.KeepsArt,$=s=>document.querySelector(s),esc=D.esc,icon=D.icon;
+ const foodUrls={},scenes={};
+ const art=k=>foodUrls[k]||(foodUrls[k]=A.url(k));
+ const scene=k=>scenes[k]||(scenes[k]='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(A.scene(k)));
+ const src=e=>e.photo||art(e.kind),photo=e=>e.photo||scene(e.kind);
+ const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+ const zhMonths=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+ const pads=n=>String(n).padStart(2,'0'),dateKey=(y,m,d)=>`${y}-${pads(m)}-${pads(d)}`;
+ const now=new Date(),today=dateKey(now.getFullYear(),now.getMonth()+1,now.getDate());
+ const state={entries:[],space:'demo',view:'calendar',year:2026,month:10,date:'2026-10-18',dayIndex:0,motionOff:matchMedia('(prefers-reduced-motion: reduce)').matches};
+ let boxCleanup=null,toastTimer=null,draft=null,reelTimer=null,reelIndex=0,reelEntries=[],reelPlaying=false,saveBusy=false,photoBusy=false,photoRequest=0,storageAvailable=true;
+ const all=()=>state.entries.filter(e=>e.space===state.space);
+ const monthEntries=()=>all().filter(e=>e.date.startsWith(`${state.year}-${pads(state.month)}-`)).sort((a,b)=>a.date.localeCompare(b.date)||a.createdAt.localeCompare(b.createdAt));
+ const dayEntries=()=>all().filter(e=>e.date===state.date);
+ const find=id=>state.entries.find(e=>e.id===id&&e.space===state.space);
+ function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').classList.add('show');toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),3200);}
+ function fillIcons(root=document){root.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));}
+ function download(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),3000);}
+ async function persist(next){if(!storageAvailable)throw new Error('storage');await D.write(next);state.entries=next;}
+ function meta(e){return e.photo?'我的照片':e.isExample?'原创插画 · 示例':'原创餐品贴纸';}
+ function journalMarkup(e,full=false){
+   const parts=e.date.split('-'),weekday=['SUN','MON','TUE','WED','THU','FRI','SAT'][new Date(+parts[0],+parts[1]-1,+parts[2]).getDay()];
+   return `<article class="journal-card ${e.template==='receipt'?'receipt-theme':''}"><div class="journal-date"><strong>${parts[1]}.${parts[2]}</strong><small>${weekday} · ${parts[0]}</small></div><div class="journal-photo-wrap" ${full?'':`data-action="open-entry" data-id="${esc(e.id)}" role="button" tabindex="0" aria-label="打开这页日记"`}><span class="tape"></span><img class="journal-photo" src="${esc(photo(e))}" alt="${esc(e.photo?'我上传的用餐照片':D.kinds[e.kind]+'原创示例插画')}"><span class="photo-caption">A LITTLE MOMENT, WELL KEPT.</span></div><h3>${esc(e.title||'今天的小小快乐')}</h3><p class="journal-note">${esc(e.note||'还没写下的话，也可以以后慢慢补。')}</p><div class="journal-tags">${(e.personalItems?.length?e.personalItems:[D.kinds[e.kind]]).slice(0,4).map(v=>`<span>${esc(v)}</span>`).join('')}<span>♡ ${esc(e.mood||'小确幸')}</span></div><div class="journal-meta"><span>${meta(e)}${e.orderSource?.source==='mcp'?' · MCP 订单资料':e.orderId?' · 示例订单关联':''}</span><span class="journal-sign">enjoy the little things</span></div></article>`;
+ }
+ function heading(eye,title,subtitle,decoration='little joys.'){return `<div class="page-heading"><div><div class="eyebrow">${eye}</div><h1>${title}</h1><p class="subtitle">${subtitle}</p></div><div class="heading-decoration">${decoration}</div></div>`;}
+ function stats(entries){const days=new Set(entries.map(e=>e.date)).size,photos=entries.filter(e=>e.photo).length;return `<div class="month-summary"><div class="mini-stat"><span class="stat-icon">${icon('calendar')}</span><div><strong>${entries.length}<span class="stat-unit">餐</span></strong><small>本月收录${state.space==='demo'?' · 含示例':''}</small></div></div><div class="mini-stat"><span class="stat-icon">${icon('heart')}</span><div><strong>${days}<span class="stat-unit">天</span></strong><small>留下回忆的日子</small></div></div><div class="mini-stat"><span class="stat-icon">${icon('photo')}</span><div><strong>${photos}<span class="stat-unit">张</span></strong><small>自己的照片</small></div></div></div>`;}
+ function calendarHTML(){
+   const entries=monthEntries(),first=(new Date(state.year,state.month-1,1).getDay()+6)%7,days=new Date(state.year,state.month,0).getDate(),total=Math.ceil((first+days)/7)*7;
+   let cells='';for(let i=0;i<total;i++){const d=i-first+1;if(d<1||d>days){cells+='<div class="day-cell blank"></div>';continue;}
+     const date=dateKey(state.year,state.month,d),es=entries.filter(e=>e.date===date),e=es[0],tilt=[-10,6,-4,8,-7,4][d%6];
+     cells+=`<button class="day-cell ${e?'has-entry':''} ${state.date===date?'selected':''} ${date===today?'is-today':''}" data-action="day" data-date="${date}" aria-label="${state.month}月${d}日，${es.length}条记录" aria-pressed="${state.date===date}"><span class="day-number">${d}</span>${e?`<img class="${e.photo?'day-photo':'day-sticker'}" src="${esc(src(e))}" alt="" style="--tilt:${tilt}deg;--i:${d%9}">${es.length>1?`<small class="day-extra">+${es.length-1}</small>`:''}`:''}</button>`;
+   }
+   return heading(`${months[state.month-1]} ${state.year} · A DIARY OF LITTLE BITES`,`${zhMonths[state.month-1]}，把小日子<em>收好。</em>`,'一张照片，一口喜欢。普通的一餐，也值得记下来。')+`<div class="content-grid"><section class="calendar-column"><div class="calendar-panel"><div class="calendar-toolbar"><div class="month-name"><strong>${state.month}月</strong><small>${state.year}</small></div><div class="month-controls"><button class="icon-btn" data-action="prev-month" aria-label="上一个月">${icon('left')}</button><button class="today-btn" data-action="today">今天</button><button class="icon-btn" data-action="next-month" aria-label="下一个月">${icon('right')}</button></div></div><div class="weekdays">${['一','二','三','四','五','六','日'].map(s=>`<span>${s}</span>`).join('')}</div><div class="calendar-grid entering">${cells}</div><div class="calendar-bottom"><span><i class="legend-dot"></i>点开一天，翻一页回忆</span><b>${new Set(entries.map(e=>e.date)).size} 个有记录的日子</b></div></div><div class="calendar-under"><span class="under-star">✳</span><div><p>今天，有什么小事值得留住？</p><small>选一张照片，剩下的交给这一页。</small></div><button class="text-btn" data-action="new">记一餐 ↗</button></div>${stats(entries)}</section><aside class="day-preview" id="day-preview">${previewHTML()}</aside></div>`;
+ }
+ function previewHTML(){const es=dayEntries();if(!es.length)return `<div class="preview-label"><span>${+state.date.slice(5,7)} 月 ${+state.date.slice(8)} 日</span><span>YOUR NEXT PAGE</span></div><div class="preview-empty"><img class="empty-art" src="${art('coffee')}" alt=""><p>这一页，等你来写。</p><small>没有记录的日子，也可以慢慢补。</small><button class="primary-btn small" data-action="new">${icon('plus')}留下这一餐</button></div>`;
+   state.dayIndex=Math.min(state.dayIndex,es.length-1);const e=es[state.dayIndex];
+   return `<div class="preview-label"><span>${state.date===today?'今天':'这一日'}的小小记忆</span><span>PAGE ${String(all().indexOf(e)+1).padStart(2,'0')}</span></div><div class="journal-pop">${journalMarkup(e)}</div>${es.length>1?`<div class="day-switch">${es.map((item,i)=>`<button class="${i===state.dayIndex?'active':''}" data-action="day-index" data-index="${i}" aria-label="查看当天第${i+1}餐"></button>`).join('')}</div>`:''}<div class="preview-actions"><button data-action="edit" data-id="${esc(e.id)}">${icon('edit')}编辑这一页</button><button data-action="export" data-id="${esc(e.id)}">${icon('download')}保存图片</button></div>`;
+ }
+ function collectionHTML(){const entries=monthEntries(),amounts=entries.filter(e=>e.amount!=null),total=amounts.reduce((s,e)=>s+Math.round(e.amount*100),0)/100;return heading(`${months[state.month-1]} ${state.year} · THE LITTLE COLLECTION`,'把喜欢的，<em>都装进来。</em>','每一枚贴纸，都是一个真实或想象中的小小瞬间。','a pocket of joy.')+`<div class="collection-layout"><section class="collection-board"><div class="collection-board-head"><h2>${state.month} 月的快乐碎片</h2><small>${entries.length} 个小瞬间</small></div><div id="sticker-box" class="sticker-box" aria-label="可以拖动的食物贴纸盒"></div><div class="collection-caption"><p>${entries.length?'拖一拖，晃一晃。点贴纸可以打开日记。':'还没有贴纸。先记下一餐吧。'}</p><button class="shake-btn" data-action="shake" ${!entries.length?'disabled':''}>↝ 轻轻晃一下</button></div></section><aside class="collection-right"><div class="recap-invitation"><div class="eyebrow">YOUR MONTH, IN MOTION</div><h2>把这个月，<br>再过一遍。</h2><p>让每一个小瞬间，依次走过眼前。</p><img class="recap-art" src="${art('fries')}" alt=""><button data-action="reel" ${!entries.length?'disabled':''}>▶ 播放贴纸回顾</button></div><div class="collection-facts"><div class="fact-row"><span>收录的日记</span><b>${entries.length} 页</b></div><div class="fact-row"><span>自己的照片</span><b>${entries.filter(e=>e.photo).length} 张</b></div><div class="fact-row"><span>${state.space==='demo'?'示例与已填金额':'已填个人花费'}</span><b>¥ ${total.toFixed(2)}</b></div><div class="fact-row"><span>金额记录覆盖</span><b>${amounts.length} / ${entries.length} 页</b></div></div></aside></div><div class="collection-bottom"><div class="collection-bottom-head"><h3>这一月，一页一页。</h3><button class="text-btn" data-action="export-month" ${!entries.length?'disabled':''}>保存照片月历 ↗</button></div><div class="collection-strip">${entries.map(e=>`<button class="strip-entry" data-action="open-entry" data-id="${esc(e.id)}"><img class="${e.photo?'is-photo':''}" src="${esc(src(e))}" alt=""><strong>${e.date.slice(5).replace('-',' / ')}</strong><small>${esc(e.title)}</small></button>`).join('')||'<p class="subtitle">第一枚贴纸，留给今天。</p>'}</div></div>`;}
+ function yearHTML(){const entries=all().filter(e=>e.date.startsWith(state.year+'-'));return heading('A YEAR OF ORDINARY WONDERS','慢慢吃，<em>慢慢收藏。</em>',`${state.year} 年已留下 ${entries.length} 页。不是完整账单，是你愿意记住的小日子。`,'turn the page.')+`<div class="calendar-toolbar"><div class="year-controls"><button class="icon-btn" data-action="prev-year" aria-label="上一年">${icon('left')}</button><b>${state.year}</b><button class="icon-btn" data-action="next-year" aria-label="下一年">${icon('right')}</button></div><span class="subtitle">点开月份，翻回那一页</span></div><div class="year-grid">${months.map((m,i)=>{const es=entries.filter(e=>+e.date.slice(5,7)===i+1),e=es[es.length-1];return `<button class="month-book ${e?'':'book-empty'}" data-action="book" data-month="${i+1}" aria-label="${i+1}月，${es.length}条记录"><div class="book-cover" ${e?`style="background:${['#eadbc1','#dfe2cc','#ead8ce','#deded0'][i%4]}"`:''}><div class="book-month"><strong>${pads(i+1)}</strong><small>${m.toUpperCase().slice(0,3)}</small></div>${e?`<img class="book-art ${e.photo?'book-photo':''}" src="${esc(src(e))}" alt="">`:'<span class="empty-book-star">✳</span>'}<div class="book-caption">${e?'LITTLE BITES, LOVELY DAYS':'A PAGE WAITING FOR YOU'}</div></div><div class="book-label"><b>${zhMonths[i]}</b><span>${es.length?es.length+' 页小日子':'留白也很好'}</span></div></button>`;}).join('')}</div>`;}
+ function render(){if(boxCleanup){boxCleanup();boxCleanup=null;}const host=$('#view-host');host.innerHTML=state.view==='calendar'?calendarHTML():state.view==='collection'?collectionHTML():yearHTML();host.classList.remove('view-enter');if(!state.motionOff){void host.offsetWidth;host.classList.add('view-enter');}document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===state.view);b.setAttribute('aria-current',b.dataset.view===state.view?'page':'false');});$('#view-crumb').textContent={calendar:'照片日历',collection:'本月收藏',year:'年度书架'}[state.view];$('#space-btn').children[1].textContent=state.space==='demo'?'示例手帐':'我的手帐';if(state.view==='collection'){boxCleanup=KeepsMotion.mount($('#sticker-box'),{items:monthEntries().slice(-18).map(e=>({id:e.id,src:src(e),label:e.title})),onSelect:openEntry,reducedMotion:state.motionOff});}fillIcons();}
+ function setView(view){state.view=['calendar','collection','year'].includes(view)?view:'calendar';history.replaceState(null,'','#'+state.view);render();window.scrollTo({top:0,behavior:state.motionOff?'auto':'smooth'});}
+ function changeMonth(delta){let d=new Date(state.year,state.month-1+delta,1);state.year=d.getFullYear();state.month=d.getMonth()+1;state.date=dateKey(state.year,state.month,1);state.dayIndex=0;render();}
+ $('#view-host').addEventListener('click',async event=>{const el=event.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,id=el.dataset.id;
+   if(action==='day'){state.date=el.dataset.date;state.dayIndex=0;document.querySelectorAll('.day-cell').forEach(b=>{b.classList.toggle('selected',b.dataset.date===state.date);b.setAttribute('aria-pressed',String(b.dataset.date===state.date));});$('#day-preview').innerHTML=previewHTML();if(innerWidth<=720)$('#day-preview').scrollIntoView({behavior:state.motionOff?'auto':'smooth',block:'start'});}
+   if(action==='day-index'){state.dayIndex=+el.dataset.index;$('#day-preview').innerHTML=previewHTML();}
+   if(action==='prev-month')changeMonth(-1);if(action==='next-month')changeMonth(1);
+   if(action==='today'){state.year=now.getFullYear();state.month=now.getMonth()+1;state.date=today;state.dayIndex=0;render();}
+   if(action==='new')openEditor();if(action==='edit')openEditor(id);if(action==='open-entry')openEntry(id);if(action==='export')exportEntry(find(id));if(action==='export-month')exportMonth();if(action==='shake')boxCleanup?.shake();if(action==='reel')openReel();
+   if(action==='prev-year'||action==='next-year'){state.year+=action==='next-year'?1:-1;render();}
+   if(action==='book'){state.month=+el.dataset.month;const es=monthEntries();state.date=es[es.length-1]?.date||dateKey(state.year,state.month,1);state.dayIndex=0;setView('calendar');}
+ });
+ $('#view-host').addEventListener('keydown',e=>{const p=e.target.closest('.journal-photo-wrap');if(p&&(e.key==='Enter'||e.key===' ')){e.preventDefault();p.click();}});
+ document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
+ function openEntry(id){const e=find(id);if(!e)return;$('#entry-host').innerHTML=`<header class="dialog-header"><div><h2>翻开这一页</h2><p>${esc(e.date)} · ${meta(e)}</p></div><button class="icon-btn" data-close aria-label="关闭日记">${icon('close')}</button></header><div class="entry-full">${journalMarkup(e,true)}</div><div class="entry-dialog-actions"><button class="secondary-btn" id="detail-edit">${icon('edit')}编辑</button><button class="primary-btn" id="detail-export">${icon('download')}保存图片</button><button class="delete-btn" id="detail-delete">删除这页</button></div>`;$('#entry-dialog').showModal();$('#entry-dialog').querySelector('[data-close]').onclick=()=>$('#entry-dialog').close();$('#detail-edit').onclick=()=>{$('#entry-dialog').close();openEditor(id);};$('#detail-export').onclick=()=>exportEntry(e);$('#detail-delete').onclick=async()=>{if(await confirm('删除这一页？','照片和随记会从本机手帐删除。其他页面不受影响。')){try{await persist(state.entries.filter(x=>x.id!==id||x.space!==state.space));$('#entry-dialog').close();render();toast('已删除这一页');}catch{toast('保存失败，原记录还在');}}};}
+ function editorPreview(){return journalMarkup({...draft,id:'draft',isExample:!draft.photo},true);}
+ function updateEditorPreview(){const preview=$('#editor-preview');if(preview)preview.innerHTML=editorPreview();}
+ function openEditor(id){photoBusy=false;photoRequest++;const original=id?find(id):null;draft=original?JSON.parse(JSON.stringify(original)):{id:'entry-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),space:state.space,date:state.date,kind:'fries',title:'今天的小小快乐',note:'',mood:'小确幸',amount:null,photo:null,template:'polaroid',personalItems:['薯条'],isExample:false,createdAt:new Date().toISOString()};
+  $('#editor-host').innerHTML=`<header class="dialog-header"><div><h2>${original?'编辑这页小日子':'记下这一餐'}</h2><p>选一张照片，留一句话。其余的，慢慢补。</p></div><button class="icon-btn" data-close aria-label="关闭编辑">${icon('close')}</button></header><div class="editor-body"><div class="editor-preview" id="editor-preview">${editorPreview()}</div><div class="editor-fields"><div><label class="upload-btn" for="photo-input">${icon('camera')}<span id="photo-label">${draft.photo?'更换我的照片':'拍照 / 上传自己的照片'}</span></label><input id="photo-input" type="file" accept="image/*" hidden><p class="field-note">照片保存在本机。也可以先用原创餐品贴纸。</p></div><div><span class="field-label">这一口，想记住什么？</span><div class="food-picker">${Object.keys(D.kinds).map(k=>`<button class="food-choice ${draft.kind===k?'selected':''}" data-food="${k}" aria-label="${D.kinds[k]}"><img src="${art(k)}" alt=""></button>`).join('')}</div></div><div class="row fields"><div><label class="field-label" for="entry-date">用餐日期</label><input class="field-input" type="date" id="entry-date" value="${draft.date}" min="1900-01-01" max="2200-12-31"></div><div><label class="field-label" for="entry-amount">我的花费（选填）</label><input class="field-input" id="entry-amount" type="number" min="0" max="100000" step="0.01" placeholder="¥ 不知道可以留空" value="${draft.amount??''}"></div></div><div><label class="field-label" for="entry-title">给这一页起个名字</label><input id="entry-title" class="field-input" value="${esc(draft.title)}" maxlength="36"></div><div><label class="field-label" for="entry-note">当时的心情（选填）</label><textarea id="entry-note" class="field-input" placeholder="例如：阳光刚好落在桌角，今天的薯条特别脆。" maxlength="500">${esc(draft.note)}</textarea></div><div class="mood-options">${['小确幸','很满足','慢慢来','和朋友','充个电'].map(s=>`<button class="mood-pill ${s===draft.mood?'selected':''}" data-mood="${s}">${s}</button>`).join('')}</div><div class="template-options"><button data-template="polaroid" class="${draft.template==='polaroid'?'selected':''}">拍立得日记</button><button data-template="receipt" class="${draft.template==='receipt'?'selected':''}">票根拼贴</button>${draft.photo?'<button id="remove-photo">移除照片</button>':''}</div><button class="order-toggle" id="order-toggle">${draft.orderSource?.source==='mcp'?'已关联 MCP 订单 · 选择本人餐品':draft.orderId?'已关联示例订单 · 查看':'＋ 试试关联示例订单'}</button><div id="order-host" hidden></div></div></div><footer class="editor-footer"><small>${state.space==='demo'?'当前是示例手帐空间':'保存到「我的手帐」'}<br>${draft.orderSource?.source==='mcp'?'MCP 订单资料 · 用餐日期请确认':'示例 / 手动记录 · 日期请确认'}</small><div class="row"><button class="secondary-btn" id="editor-cancel">取消</button><button class="primary-btn" id="editor-save">${icon('check')}收进日历</button></div></footer>`;
+  $('#editor-dialog').showModal();$('#editor-host').querySelector('[data-close]').onclick=()=>$('#editor-dialog').close();$('#editor-cancel').onclick=()=>$('#editor-dialog').close();$('#editor-save').onclick=saveEditor;
+  $('#entry-title').oninput=e=>{draft.title=e.target.value;updateEditorPreview();};$('#entry-note').oninput=e=>{draft.note=e.target.value;updateEditorPreview();};$('#entry-date').oninput=e=>{if(D.dateValid(e.target.value)){draft.date=e.target.value;updateEditorPreview();}};$('#entry-amount').oninput=e=>{draft.amount=e.target.value===''?null:Number(e.target.value);};
+  $('#editor-host').querySelectorAll('[data-food]').forEach(b=>b.onclick=()=>{draft.kind=b.dataset.food;if(!draft.orderId)draft.personalItems=[D.kinds[draft.kind]];$('#editor-host').querySelectorAll('[data-food]').forEach(v=>v.classList.toggle('selected',v===b));updateEditorPreview();});
+  $('#editor-host').querySelectorAll('[data-mood]').forEach(b=>b.onclick=()=>{draft.mood=b.dataset.mood;$('#editor-host').querySelectorAll('[data-mood]').forEach(v=>v.classList.toggle('selected',v===b));updateEditorPreview();});
+  $('#editor-host').querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>{draft.template=b.dataset.template;$('#editor-host').querySelectorAll('[data-template]').forEach(v=>v.classList.toggle('selected',v===b));updateEditorPreview();});
+  $('#photo-input').onchange=async e=>{const file=e.target.files[0];if(!file)return;const targetDraft=draft,request=++photoRequest;photoBusy=true;$('#editor-save').disabled=true;$('#photo-label').textContent='正在整理照片…';try{const data=await processPhoto(file);if(draft!==targetDraft||request!==photoRequest)return;draft.photo=data;draft.isExample=false;$('#photo-label').textContent='照片已加入 · 点击更换';updateEditorPreview();toast('照片已加入。请确认这顿饭的日期');}catch(error){if(draft===targetDraft&&request===photoRequest){$('#photo-label').textContent='重新选择照片';toast(error.message||'这张图片暂时无法读取，请试 JPG、PNG 或 WebP');}}finally{if(draft===targetDraft&&request===photoRequest){photoBusy=false;if($('#editor-save'))$('#editor-save').disabled=saveBusy;}}};
+  if($('#remove-photo'))$('#remove-photo').onclick=()=>{photoRequest++;photoBusy=false;$('#editor-save').disabled=false;draft.photo=null;$('#photo-label').textContent='拍照 / 上传自己的照片';$('#remove-photo').remove();updateEditorPreview();};
+  $('#order-toggle').onclick=()=>{const host=$('#order-host');host.hidden=!host.hidden;if(!host.hidden)renderOrders();};
+ }
+ function renderOrders(){const host=$('#order-host');if(draft.orderSource?.source==='mcp'){renderLiveDraft(host);return;}host.innerHTML=`<div class="order-list"><p class="field-note">仅为交互示例。关联不会覆盖照片、日期和随记。</p>${D.orders.map(o=>`<button class="order-option ${draft.orderId===o.id?'selected':''}" data-order="${o.id}"><span>${o.title}<br><small>${o.date} · 整单 ¥${o.amount}</small></span><span>${draft.orderId===o.id?'✓':'＋'}</span></button>`).join('')}${draft.orderId?`<div class="order-details">我记下的餐品（请勾选本人部分）：${D.orders.find(o=>o.id===draft.orderId).items.map(item=>`<label><input type="checkbox" data-item="${esc(item.name)}" ${draft.personalItems.includes(item.name)?'checked':''}>${esc(item.name)}</label>`).join('')}<p class="field-note">整单金额不自动算作你的花费。</p><button class="order-toggle" id="unlink-order">取消关联</button></div>`:''}</div>`;host.querySelectorAll('[data-order]').forEach(b=>b.onclick=()=>{const o=D.orders.find(x=>x.id===b.dataset.order);draft.orderId=o.id;draft.personalItems=[o.items[0].name];$('#order-toggle').textContent='已关联示例订单 · 查看';renderOrders();updateEditorPreview();});host.querySelectorAll('[data-item]').forEach(c=>c.onchange=()=>{draft.personalItems=[...host.querySelectorAll('[data-item]:checked')].map(v=>v.dataset.item);updateEditorPreview();});if($('#unlink-order'))$('#unlink-order').onclick=()=>{delete draft.orderId;draft.personalItems=[D.kinds[draft.kind]];$('#order-toggle').textContent='＋ 试试关联示例订单';renderOrders();updateEditorPreview();};}
+ async function processPhoto(file){if(!file.type.startsWith('image/'))throw new Error('请选择一张图片');if(file.size>20*1024*1024)throw new Error('请选小于 20 MB 的图片');const url=URL.createObjectURL(file);try{const img=await imageLoad(url);const scale=Math.min(1,1400/Math.max(img.naturalWidth,img.naturalHeight));const canvas=document.createElement('canvas');canvas.width=Math.round(img.naturalWidth*scale);canvas.height=Math.round(img.naturalHeight*scale);const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);return canvas.toDataURL('image/jpeg',.86);}finally{URL.revokeObjectURL(url);}}
+ async function saveEditor(){if(saveBusy)return;if(photoBusy){toast('照片还在整理，请稍等一下');return;}const date=$('#entry-date').value,amountText=$('#entry-amount').value,amount=amountText===''?null:Number(amountText);if(!D.dateValid(date)){toast('请先填写有效的用餐日期');return;}if(amount!==null&&(!Number.isFinite(amount)||amount<0||amount>100000)){toast('请填写有效金额，或留空');return;}draft.date=date;draft.amount=amount===null?null:Math.round(amount*100)/100;draft.title=draft.title.trim()||'今天的小小快乐';
+   if(draft.orderId&&state.entries.some(e=>e.id!==draft.id&&e.space===state.space&&e.orderId===draft.orderId)){if(!await confirm('这笔订单已有日记','如果这是同一餐，可以返回编辑原来的日记。确认后将作为另一餐保存，不重复计整单金额。'))return;}
+   saveBusy=true;$('#editor-save').disabled=true;const saved={...draft,updatedAt:new Date().toISOString()};try{const exists=state.entries.some(e=>e.id===saved.id&&e.space===saved.space);await persist(exists?state.entries.map(e=>e.id===saved.id&&e.space===saved.space?saved:e):[...state.entries,saved]);$('#editor-dialog').close();state.year=+saved.date.slice(0,4);state.month=+saved.date.slice(5,7);state.date=saved.date;state.dayIndex=all().filter(e=>e.date===state.date).findIndex(e=>e.id===saved.id);setView('calendar');flyToDate(saved);toast(exists?'这一页，已经更新':'收好啦。又多了一页小日子');}catch{toast('本机保存失败，请先导出备份或检查浏览器存储权限');}finally{saveBusy=false;if($('#editor-save'))$('#editor-save').disabled=false;}}
+ function flyToDate(e){if(state.motionOff)return;const cell=document.querySelector(`[data-date="${e.date}"]`);if(!cell)return;cell.scrollIntoView({behavior:'auto',block:'nearest'});const r=cell.getBoundingClientRect(),img=document.createElement('img');img.src=src(e);img.className='fly-sticker';img.style.left=`${innerWidth/2-47}px`;img.style.top=`${Math.min(innerHeight/2,500)-47}px`;document.body.appendChild(img);const dx=r.left+r.width/2-innerWidth/2,dy=r.top+r.height/2-Math.min(innerHeight/2,500);const anim=img.animate([{transform:'translate(0,0) rotate(-12deg) scale(1.7)',opacity:0},{transform:'translate(0,-35px) rotate(10deg) scale(1.7)',opacity:1,offset:.2},{transform:`translate(${dx}px,${dy}px) rotate(-6deg) scale(.57)`,opacity:1}],{duration:850,easing:'cubic-bezier(.25,.7,.25,1)',fill:'forwards'});anim.finished.then(()=>{img.remove();cell.classList.add('saved-pop');setTimeout(()=>cell.classList.remove('saved-pop'),700);}).catch(()=>img.remove());}
+ function renderLiveDraft(host){
+  const o=draft.orderSource;
+  host.innerHTML=`<div class="order-list"><p class="field-note">MCP 只读订单资料 · 下单日 ${esc(o.date||'未知')} · 整单 ${o.totalMinor==null?'金额未知':'¥'+(o.totalMinor/100).toFixed(2)}</p><div class="order-details">我记下的餐品（仅勾选本人部分）：${o.items.map(item=>`<label><input type="checkbox" data-real-item="${esc(item.name)}" ${draft.personalItems.includes(item.name)?'checked':''}>${esc(item.name)}</label>`).join('')}<p class="field-note">照片、用餐日期、随记与个人花费保留你的填写。</p><button class="order-toggle" id="unlink-real">解除订单关联</button></div></div>`;
+  host.querySelectorAll('[data-real-item]').forEach(c=>c.onchange=()=>{draft.personalItems=[...host.querySelectorAll('[data-real-item]:checked')].map(v=>v.dataset.realItem);updateEditorPreview();});
+  $('#unlink-real').onclick=()=>{delete draft.orderId;delete draft.orderSource;draft.personalItems=[D.kinds[draft.kind]];$('#order-toggle').textContent='＋ 试试关联示例订单';renderOrders();updateEditorPreview();};
+ }
+ function beginOrder(order,target){
+  state.space='personal';try{localStorage.setItem('mc-keeps-space','personal');}catch{}
+  const existing=target?find(target):all().find(e=>e.orderId===order.id);
+  if(existing){state.date=existing.date;state.year=+existing.date.slice(0,4);state.month=+existing.date.slice(5,7);}
+  else {state.date=order.date||today;state.year=+state.date.slice(0,4);state.month=+state.date.slice(5,7);}
+  render();openEditor(existing?.id);draft.orderId=order.id;
+  draft.orderSource={source:'mcp',status:order.status,storeName:order.storeName,totalMinor:order.totalMinor,date:order.date,items:order.items.map(p=>({name:p.name,quantity:p.quantity}))};
+  if(!existing){draft.personalItems=[];draft.kind=order.kind;draft.isExample=false;}
+  $('#order-toggle').textContent='已关联 MCP 订单 · 选择本人餐品';$('#order-host').hidden=false;renderOrders();updateEditorPreview();
+ }
+ function confirm(title,text){return new Promise(resolve=>{const d=$('#confirm-dialog');$('#confirm-title').textContent=title;$('#confirm-text').textContent=text;d.returnValue='cancel';d.addEventListener('close',()=>resolve(d.returnValue==='ok'),{once:true});d.showModal();});}
+ function imageLoad(url){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('图片无法读取，请换一张 JPG、PNG 或 WebP'));img.src=url;});}
+ function drawImageCover(ctx,img,x,y,w,h){const ratio=Math.max(w/img.width,h/img.height),sw=w/ratio,sh=h/ratio;ctx.drawImage(img,(img.width-sw)/2,(img.height-sh)/2,sw,sh,x,y,w,h);}
+ function roundRect(ctx,x,y,w,h,r,fill){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=fill;ctx.fill();}
+ function wrapText(ctx,text,x,y,width,lineHeight,maxLines){let line='',count=0;for(const char of String(text)){if(char==='\n'||ctx.measureText(line+char).width>width){if(count>=maxLines-1){ctx.fillText(line.slice(0,-1)+'…',x,y);return;}ctx.fillText(line,x,y);line=char==='\n'?'':char;y+=lineHeight;count++;}else line+=char;}if(line&&count<maxLines)ctx.fillText(line,x,y);}
+ async function exportEntry(e){if(!e)return;try{toast('正在整理成图片…');const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1440;const c=canvas.getContext('2d');c.fillStyle='#f2ecde';c.fillRect(0,0,1080,1440);roundRect(c,62,55,956,1325,18,'#fffdf7');c.fillStyle='#8e7958';c.font='70px Georgia';c.fillText(e.date.slice(5).replace('-','.'),120,170);c.font='20px Georgia';c.fillStyle='#aa9b83';c.fillText('A LITTLE MOMENT, WELL KEPT.',120,215);const img=await imageLoad(photo(e));c.fillStyle='white';c.fillRect(111,255,858,650);drawImageCover(c,img,128,271,824,595);c.font='18px Georgia';c.fillStyle='#ad9c82';c.fillText('LITTLE BITES, LOVELY DAYS',350,894);c.fillStyle='#716148';c.font='40px "Microsoft YaHei",sans-serif';wrapText(c,e.title,120,990,840,54,2);c.font='25px "Microsoft YaHei",sans-serif';c.fillStyle='#a08b6c';wrapText(c,e.note||'把普通的一天，也好好收藏。',120,1100,840,45,4);c.fillStyle='#c1b49c';c.font='18px sans-serif';c.fillText('麦味拾光 · '+e.date+' · '+(e.photo?'我的照片':'原创插画')+(state.space==='demo'?' · 示例空间':''),120,1330);canvas.toBlob(blob=>{if(blob)download(blob,'麦味拾光-'+e.date+'.png');else toast('图片保存失败，请重试');},'image/png');toast('日记图片已生成；长文会节选，完整内容请备份');}catch{toast('图片暂时无法导出，请重试');}}
+ async function exportMonth(){const entries=monthEntries();if(!entries.length)return;try{toast('正在排好这个月的照片…');const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1440;const c=canvas.getContext('2d');c.fillStyle='#f6f1e6';c.fillRect(0,0,1080,1440);c.font='80px Georgia';c.fillStyle='#79684e';c.fillText(months[state.month-1],70,140);c.font='26px sans-serif';c.fillStyle='#a7977b';c.fillText(state.year+' · 把小日子，慢慢收好',74,190);const first=(new Date(state.year,state.month-1,1).getDay()+6)%7,days=new Date(state.year,state.month,0).getDate(),rows=Math.ceil((first+days)/7),cw=132,ch=Math.min(180,1040/rows),gap=7;['一','二','三','四','五','六','日'].forEach((v,i)=>{c.font='20px sans-serif';c.fillStyle='#b4a78e';c.fillText(v,123+i*(cw+gap),259);});for(let d=1;d<=days;d++){const pos=d-1+first,x=57+(pos%7)*(cw+gap),y=285+Math.floor(pos/7)*(ch+gap),es=entries.filter(e=>e.date===dateKey(state.year,state.month,d));roundRect(c,x,y,cw,ch,14,'#fffdf7');c.fillStyle='#b6a68b';c.font='18px Georgia';c.fillText(String(d),x+12,y+24);if(es.length){const e=es[0],img=await imageLoad(src(e));if(e.photo)drawImageCover(c,img,x+12,y+36,cw-24,ch-50);else c.drawImage(img,x+3,y+30,cw-6,ch-37);if(es.length>1){c.font='15px sans-serif';c.fillStyle='#a48c66';c.fillText('+'+(es.length-1),x+cw-25,y+ch-8);}}}c.font='20px sans-serif';c.fillStyle='#aa9677';c.fillText(`麦味拾光 · ${entries.length} 页已记录的小日子${state.space==='demo'?' · 含示例':''}`,70,1365);canvas.toBlob(b=>{if(b)download(b,`麦味拾光-${state.year}-${pads(state.month)}月历.png`);},'image/png');toast('照片月历已生成');}catch{toast('月历生成失败，请重试');}}
+ function openReel(){reelEntries=monthEntries();if(!reelEntries.length)return;reelIndex=0;reelPlaying=!state.motionOff;$('#reel-host').innerHTML=`<div class="reel-top"><small>${months[state.month-1].toUpperCase()} · LITTLE MOMENTS</small><button class="icon-btn" id="reel-close" aria-label="关闭回顾">${icon('close')}</button></div><div class="reel-stage" id="reel-stage"></div><div class="reel-progress" id="reel-progress"></div><div class="reel-controls"><button class="icon-btn" id="reel-prev" aria-label="上一页">${icon('left')}</button><button class="primary-btn small" id="reel-play"></button><button class="icon-btn" id="reel-next" aria-label="下一页">${icon('right')}</button><button class="reel-save" id="reel-save">保存这一页 ↗</button></div><p class="reel-caption">本地贴纸回放 · 支持暂停和逐页浏览</p>`;$('#reel-dialog').showModal();$('#reel-close').onclick=()=>$('#reel-dialog').close();$('#reel-prev').onclick=()=>{reelPlaying=false;stepReel(-1);};$('#reel-next').onclick=()=>{reelPlaying=false;stepReel(1);};$('#reel-play').onclick=()=>{reelPlaying=!reelPlaying;if(reelPlaying&&reelIndex===reelEntries.length-1)reelIndex=0;renderReel();scheduleReel();};$('#reel-save').onclick=()=>exportEntry(reelEntries[reelIndex]);renderReel();scheduleReel();}
+ function renderReel(){const e=reelEntries[reelIndex],stage=$('#reel-stage');stage.innerHTML=`<article class="reel-page"><div class="reel-date">${e.date.slice(5).replace('-',' . ')}</div><img class="${e.photo?'user-photo':''}" src="${esc(src(e))}" alt="${esc(e.photo?'自己的照片':D.kinds[e.kind])}"><h3>${esc(e.title)}</h3><p>♡ ${esc(e.mood)} · ${reelIndex+1} / ${reelEntries.length}</p></article>`;if(!state.motionOff)stage.firstElementChild.animate([{opacity:0,transform:'rotateX(12deg) translateY(35px) scale(.94)'},{opacity:1,transform:'rotateX(0deg) translateY(0) scale(1)'}],{duration:600,easing:'cubic-bezier(.16,.8,.2,1)'});$('#reel-progress').innerHTML=reelEntries.map((e,i)=>`<span class="${i===reelIndex?'active':i<reelIndex?'done':''}"></span>`).join('');$('#reel-play').innerHTML=icon(reelPlaying?'pause':'play')+(reelPlaying?'暂停回顾':'播放回顾');$('#reel-prev').disabled=reelIndex===0;$('#reel-next').disabled=reelIndex===reelEntries.length-1;}
+ function stepReel(delta){clearTimeout(reelTimer);reelIndex=Math.max(0,Math.min(reelEntries.length-1,reelIndex+delta));renderReel();scheduleReel();}
+ function scheduleReel(){clearTimeout(reelTimer);if(reelPlaying&&$('#reel-dialog').open)reelTimer=setTimeout(()=>{if(reelIndex<reelEntries.length-1)stepReel(1);else{reelPlaying=false;renderReel();}},2100);}
+ $('#reel-dialog').addEventListener('close',()=>{clearTimeout(reelTimer);reelPlaying=false;});document.addEventListener('visibilitychange',()=>{if(document.hidden&&reelPlaying){reelPlaying=false;clearTimeout(reelTimer);if($('#reel-dialog').open)renderReel();}});
+ matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches){state.motionOff=true;document.documentElement.classList.add('motion-off');reelPlaying=false;clearTimeout(reelTimer);if($('#reel-dialog').open)renderReel();render();}});
+ document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
+ async function switchSpace(){state.space=state.space==='demo'?'personal':'demo';try{localStorage.setItem('mc-keeps-space',state.space);}catch{}if(state.space==='personal'){state.year=now.getFullYear();state.month=now.getMonth()+1;state.date=today;}render();toast(state.space==='personal'?'这里是你的空白手帐，可以开始记录':'已回到示例手帐');}
+ $('#space-btn').onclick=switchSpace;$('#mobile-space').onclick=switchSpace;$('#new-entry-top').onclick=()=>openEditor();$('#mobile-add').onclick=()=>openEditor();
+ $('#motion-toggle').onclick=()=>{state.motionOff=!state.motionOff;document.documentElement.classList.toggle('motion-off',state.motionOff);$('#motion-toggle').setAttribute('aria-label',state.motionOff?'开启动效':'暂停装饰动效');render();toast(state.motionOff?'已减少动效，所有记录功能仍可使用':'动效已开启');};
+ $('#backup-btn').onclick=()=>{const entries=all(),blob=new Blob([JSON.stringify({format:'mc-keeps',version:1,exportedAt:new Date().toISOString(),space:state.space,entries},null,2)],{type:'application/json'});if(entries.length>500||blob.size>45*1024*1024){toast('超出本版备份容量（500页 / 45MB），暂不生成无法恢复的文件');return;}download(blob,'麦味拾光-完整备份-'+today+'.json');toast('备份已生成，照片和文字都在里面');};
+ $('#restore-btn').onclick=()=>$('#restore-input').click();
+ $('#restore-input').onchange=async e=>{const file=e.target.files[0];e.target.value='';if(!file)return;try{if(file.size>45*1024*1024)throw new Error('备份超过 45 MB，请使用较小备份');const value=JSON.parse(await file.text());if(value.format!=='mc-keeps'||value.version!==1||!Array.isArray(value.entries)||value.entries.length>500)throw new Error('不是支持的麦味拾光备份');const restored=value.entries.map(item=>{if(!item||typeof item.id!=='string'||!/^[A-Za-z0-9_-]{1,100}$/.test(item.id)||!D.dateValid(item.date)||!Object.hasOwn(D.kinds,item.kind)||typeof item.title!=='string'||typeof item.note!=='string'||item.title.length>100||item.note.length>2000||item.photo&&(!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(item.photo)||item.photo.length>8e6)||item.amount!=null&&(!Number.isFinite(item.amount)||item.amount<0||item.amount>100000))throw new Error('备份包含无效的记录，未导入');return {id:item.id,space:state.space,date:item.date,kind:item.kind,title:item.title,note:item.note,mood:typeof item.mood==='string'?item.mood.slice(0,20):'小确幸',amount:item.amount??null,photo:item.photo||null,template:item.template==='receipt'?'receipt':'polaroid',personalItems:Array.isArray(item.personalItems)?item.personalItems.filter(v=>typeof v==='string').map(v=>v.slice(0,60)).slice(0,20):[D.kinds[item.kind]],orderId:D.orders.some(o=>o.id===item.orderId)?item.orderId:item.orderSource?.source==='mcp'&&/^mcp-[a-f0-9]{28}$/.test(item.orderId||'')?item.orderId:undefined,orderSource:item.orderSource?.source==='mcp'&&/^mcp-[a-f0-9]{28}$/.test(item.orderId||'')?{source:'mcp',status:String(item.orderSource.status||'未知').slice(0,80),storeName:String(item.orderSource.storeName||'').slice(0,160),totalMinor:Number.isSafeInteger(item.orderSource.totalMinor)&&item.orderSource.totalMinor>=0?item.orderSource.totalMinor:null,date:D.dateValid(item.orderSource.date)?item.orderSource.date:null,items:Array.isArray(item.orderSource.items)?item.orderSource.items.slice(0,100).filter(p=>p&&typeof p.name==='string').map(p=>({name:p.name.slice(0,160),quantity:Number.isSafeInteger(p.quantity)?p.quantity:null})):[]}:undefined,isExample:!!item.isExample,createdAt:typeof item.createdAt==='string'?item.createdAt:new Date().toISOString()};});const existing=new Set(all().map(v=>v.id)),unique=new Map();restored.forEach(v=>{if(!existing.has(v.id))unique.set(v.id,v);});const imported=[...unique.values()];if(!await confirm('恢复这份备份？',`将向当前空间加入 ${imported.length} 页，跳过 ${restored.length-imported.length} 页重复记录。已有内容保留。`))return;await persist([...state.entries,...imported]);render();toast(`已恢复 ${imported.length} 页，照片和文字都在`);}catch(error){toast(error.message||'恢复失败，已有日记没有改变');}};
+ window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(['calendar','collection','year'].includes(v)&&v!==state.view){state.view=v;render();}});
+ async function boot(){try{const stored=await D.read();state.entries=Array.isArray(stored)?stored:D.seedEntries();if(!stored)await D.write(state.entries);}catch{storageAvailable=false;state.entries=D.seedEntries();toast('浏览器不允许本地存储，当前只能预览示例');}try{state.space=localStorage.getItem('mc-keeps-space')==='personal'?'personal':'demo';}catch{}state.view=['calendar','collection','year'].includes(location.hash.slice(1))?location.hash.slice(1):'calendar';document.documentElement.classList.toggle('motion-off',state.motionOff);render();fillIcons();window.McKeeps={state,render,openEditor,openEntry,exportEntry,exportMonth,beginOrder};}
+ boot();
+})();
+
+(()=>{
+ 'use strict';
+ const esc=KeepsData.esc,icon=KeepsData.icon;
+ const button=document.createElement('button');button.className='orders-button';button.id='live-orders-button';button.textContent='订单连接';document.querySelector('.top-actions').insertBefore(button,document.querySelector('#motion-toggle'));
+ const dialog=document.createElement('dialog');dialog.className='orders-dialog';dialog.id='live-orders-dialog';document.body.appendChild(dialog);
+ let csrf='',orders=[],busy=false;
+ const isLocal=location.hostname==='127.0.0.1'&&location.port==='4880';
+ async function api(route,args){const r=await fetch(route,{method:'POST',headers:{'Content-Type':'application/json','X-Mc-Keeps-CSRF':csrf},body:JSON.stringify(args||{})});const v=await r.json();if(!r.ok)throw new Error(v.error||'读取失败');return v;}
+ function status(text){dialog.querySelector('#orders-status').textContent=text;}
+ function card(order){const personal=McKeeps.state.entries.filter(e=>e.space==='personal'),exists=personal.find(e=>e.orderId===order.id);return `<article class="live-order" data-live-id="${esc(order.id)}"><h3>${esc(order.date||'日期待确认')} · ${esc(order.status)}</h3><p>${esc(order.storeName||'门店信息未知')} · 整单 ${order.totalMinor===null?'金额未知':'¥'+(order.totalMinor/100).toFixed(2)}</p><p>时间来自下单记录，请在保存前确认实际用餐日。</p><div class="live-products">${order.items.map(p=>`${esc(p.name)}${p.quantity?' × '+p.quantity:''}${p.children.length?'<br><small>　'+p.children.map(c=>esc(c.name)).join(' / ')+'</small>':''}`).join('<br>')||'餐品明细未知，可自行补充'}</div><select aria-label="关联到哪页日记"><option value="">${exists?'打开已有订单日记':'新建一页，稍后加照片'}</option>${personal.map(e=>`<option value="${esc(e.id)}">关联已有照片：${esc(e.date)} ${esc(e.title)}</option>`).join('')}</select><div class="row"><button class="secondary-btn" data-detail>查看订单详情</button><button class="primary-btn" data-use ${!order.completed?'disabled':''}>${exists?'继续编辑这一页':'用这些资料记一餐'}</button></div>${!order.completed?'<p>该状态未确认为已完成，暂不自动生成用餐日记。</p>':''}</article>`;}
+ function renderCards(){const list=dialog.querySelector('#orders-list');list.innerHTML=orders.map(card).join('');list.querySelectorAll('[data-live-id]').forEach(el=>{const id=el.dataset.liveId;el.querySelector('[data-detail]').onclick=async e=>{if(busy)return;busy=true;e.target.disabled=true;try{status('正在读取这笔订单详情…');const result=await api('/api/order-detail',{id});orders=orders.map(o=>o.id===id?result.order:o);renderCards();status('详情已更新。配送地址、电话、取餐码和支付资料不会传入页面。');}catch(error){status(error.message);}finally{busy=false;if(e.target.isConnected)e.target.disabled=false;}};el.querySelector('[data-use]').onclick=()=>{const order=orders.find(o=>o.id===id);const target=el.querySelector('select').value;dialog.close();McKeeps.beginOrder(order,target);};});}
+ async function open(){dialog.innerHTML=`<header class="dialog-header"><div><h2>把订单，补进回忆里。</h2><p>只读查询 · 照片、随记与用餐日由你确认</p></div><button class="icon-btn" id="orders-close" aria-label="关闭订单连接">${icon('close')}</button></header><div class="orders-body"><p class="orders-explain">先拍的照片可以稍后关联订单。整单金额保留作来源参考，不会自动算成你的个人花费。</p><div id="orders-status" class="orders-status">正在检查本机连接…</div><div class="orders-close-row"><button class="primary-btn small" id="orders-refresh">读取近期订单</button><a class="orders-info" href="https://github.com/17-log/mc-keeps#真实订单连接" target="_blank" rel="noopener">本机安装说明 ↗</a></div><div id="orders-list"></div></div>`;dialog.showModal();dialog.querySelector('#orders-close').onclick=()=>dialog.close();const refresh=dialog.querySelector('#orders-refresh');refresh.disabled=true;
+ if(!isLocal){status('当前是公开演示 / 离线版，使用虚构示例。真实订单连接在本机版运行，个人凭据无需交给任何网站。');return;}
+ try{const r=await fetch('/api/status');const data=await r.json();csrf=data.csrf;if(!data.configured){status('本机还没有配置 MCP Token。请按安装说明填写 .env.local，配置后重新打开此窗口。');return;}status('本机凭据已配置。点击后只读取当前账号可见的近期订单。');refresh.disabled=false;refresh.onclick=async()=>{if(busy)return;busy=true;refresh.disabled=true;try{status('正在向麦当劳 MCP 读取…');const result=await api('/api/orders');orders=result.orders;renderCards();status(`读取到 ${orders.length} 笔订单。${result.coverage}。个人资料仅在本机处理。`);const badge=document.querySelector('.demo-badge');badge.textContent='MCP 只读已连接';}catch(error){status(error.message);}finally{busy=false;refresh.disabled=false;}};}catch{status('没有连接到本机订单服务。请从安装说明启动本机版。');}}
+ button.onclick=open;dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+})();
+</script></body></html>
