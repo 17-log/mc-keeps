@@ -10,5 +10,6 @@ dialog{border:0;padding:0;background:#fff;color:var(--ink);box-shadow:0 25px 90p
 @media(max-width:390px){.main-area{padding:0 14px}.day-cell{height:64px}.day-sticker{width:50px;height:50px}.day-cell .day-photo{width:36px;height:43px}.calendar-panel{padding:18px 12px}.calendar-grid{gap:4px}.book-cover{height:150px}.book-art{width:80px;height:80px}.collection-caption{padding:12px}.page-heading h1{font-size:23px}.demo-badge{font-size:7px}.day-preview{padding:0 5px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 .journal-meta{flex-wrap:wrap;gap:5px}.journal-meta>span:first-child{white-space:nowrap}
+@media(max-width:720px){.day-preview .journal-card{transform:none}.day-preview .journal-card:hover{transform:translateY(-2px)}}
 @media(max-width:950px){.journal-sign{font-size:14px}}
 @media(max-width:720px){.food-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.food-choice{width:100%;height:44px;display:grid;place-items:center}.food-choice img{width:40px;height:40px}}
