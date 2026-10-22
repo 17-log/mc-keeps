@@ -1,5 +1,7 @@
 # 第一版 Demo 验证记录
 
+> 2026-10-22：原仓库已新增像素人格入口、结果深链与好友对照。18 项自动测试及 56 项浏览器检查记录见 [人格验证记录](docs/personality-validation.md)，包含原照片手帐的保存、刷新和导出回归。
+
 > 更新：2026-10-20 已补上真实 MCP 只读接入，并完成界面端关联验证。此前 10 月 18 日的「没有真实 MCP」仅描述当时版本。当前结果见 [真实 MCP 验证摘要](docs/mcp-verification.md) 和 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
 
 日期：2026-10-18。工具：Playwright CLI / Chromium。使用独立测试浏览器，未调用真实 MCP，没有发送、支付或社媒发布。

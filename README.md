@@ -4,6 +4,8 @@
 
 [在线体验](https://17-log.github.io/mc-keeps/) · [动效录屏](https://17-log.github.io/mc-keeps/demo-motion.webm) · [MCP 接入说明](MCP_INTEGRATION.md) · [真实验证](docs/mcp-verification.md)
 
+[麦门浪漫人格](https://17-log.github.io/mc-keeps/#persona) · [功能与隐私说明](docs/personality.md) · [调研与传播设计](docs/virality-research.md) · [WorkBuddy 接续方案](docs/workbuddy-optimization.md)
+
 ![照片日历与当日手帐](assets/calendar.png)
 
 麦味拾光是一款面向喜欢拍食物、保存生活碎片的人的照片手帐。日历收录一餐，点击日期翻开照片和随记；本月收藏中可以拖动食物贴纸、播放连续回顾；年度书架按月份收藏回忆。
@@ -22,6 +24,21 @@
 6. 左下「示例手帐 ⇄」或手机底部「空间」切换到自己的空白手帐。
 
 在线版的预置内容为明确的原创插画和虚构记录，不会读取仓库作者的订单。照片、文字与新建记录保存在你自己的浏览器 IndexedDB，清理网站数据或换浏览器前请主动备份。
+
+## 新增扩展：麦门浪漫人格
+
+在同一 McKeeps 仓库中，以「你把日子，吃成了哪种浪漫？」作为照片手帐的新入口：完成 8 道生活场景题，按 4 条生活偏好轴生成 16 种原创人格之一。结果包含原创像素食物角色、一句生活文案、可展开的评分解释和一个轻量小任务。它是娱乐与自我表达小游戏，不是 MBTI、心理诊断或经过科学验证的人格测量。
+
+- 分享结果深链，朋友先看到你的卡片，再自测或用上次结果对照相同与不同的偏好；没有匹配百分比、稀有度或人格排行。
+- 保存 1080 × 1440 PNG 人格卡，内含指向同一结果的二维码；支持系统分享及复制链接 / 文案。
+- 「带着小任务，记一餐」打开原手帐的个人草稿，预填任务与文案，由你确认食物、日期、照片后主动保存到日历。
+- 评分仅来自这次的 8 个答案；手帐照片、订单和消费金额不参与评分。结果链接只带版本、角色码和 4 条刻度，持有链接的人可以看到这份结果摘要。
+
+本地预览也使用原项目的公开地址生成分享链接。完整流程、刻度规则、本地保存范围和文件说明见 [docs/personality.md](docs/personality.md)，实际验证范围见 [人格验证记录](docs/personality-validation.md)。
+
+![原创像素人格入口与16种生活角色](assets/persona.png)
+
+[查看实际导出的人格卡](assets/persona-card.png) · [查看手机首屏](assets/persona-mobile.png) · [打开一张示例分享结果](https://17-log.github.io/mc-keeps/#persona?v=p1&r=p1.BYCZ.2s2s002s)
 
 ## 已实现
 
@@ -80,7 +97,7 @@ npm test
 npm run build
 ```
 
-自动测试覆盖金额单位、无效日期、来源资料裁剪、重复订单、账号命名空间与失败响应。浏览器实际操作检查记录见 [VALIDATION.md](VALIDATION.md)。手机检查为 Chromium 模拟视口，尚未覆盖全部真实设备。
+自动测试覆盖金额单位、无效日期、来源资料裁剪、重复订单、账号命名空间与失败响应，以及人格全部 65,536 份答案组合、16 型可达性、结果链接编解码与隐私。浏览器实际操作检查见 [VALIDATION.md](VALIDATION.md) 和 [人格验证记录](docs/personality-validation.md)。手机检查为 Chromium 模拟视口，尚未覆盖全部真实设备。
 
 `build.js` 将原生 HTML / CSS / JavaScript 合并为单个离线 HTML。GitHub Actions 先运行测试，再只发布界面和示例录屏，不部署个人订单后端或本机配置。
 
@@ -89,6 +106,10 @@ npm run build
 - `app.js` / `data.js`：记录、年月日回看、导出和 IndexedDB。
 - `art.js`：8 款原创食物 SVG 与餐桌插画；占位插画不是用户实拍。
 - `motion.js` / `motion.css`：贴纸物理交互。
+- `persona-engine.js`：8 题、4 轴、16 个原创角色，可解释评分、版本化结果链接与偏好对照。
+- `persona-ui.js` / `persona.css`：答题、结果、好友入口、分享、二维码和 PNG 导出；通过 `app.js` 接回原手帐草稿。
+- `persona-art.js`：8 类原创 32 × 32 像素食物角色与表情变体，页面和 PNG 共用绘制定义。
+- `docs/personality.md` / `THIRD_PARTY_NOTICES.md`：人格功能与隐私边界、二维码依赖许可。
 - `orders-ui.js` / `lib/`：本机只读 MCP 查询、字段归一化、日记关联。
 - `SKILL.md`：只读订单手帐流程说明，可供支持 Skill 的客户端采用。
 - `mcp-config.example.json`：仅环境变量占位符的连接器配置示例。
@@ -99,3 +120,5 @@ npm run build
 麦当劳程序员创意开发大赛参赛作品，由参赛者独立开发，非麦当劳官方产品。餐品与订单事实以官方服务实际结果为准，项目不提供医疗或营养建议。
 
 开源许可：[MIT](LICENSE)。麦当劳品牌名称属于其权利人，开源许可不授予相应商标权。
+
+第三方二维码库 `qrcode-generator` 2.0.4 使用 MIT 许可，完整版权与许可声明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

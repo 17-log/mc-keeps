@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f6f2"><title>麦味拾光 · 把小日子，慢慢收好</title><style>/*STYLE*/</style></head>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f6f2"><title>麦味拾光 · 把小日子，慢慢收好</title><meta name="description" content="拍一张，留一页。用照片日历收藏日常，也用 8 道生活题领取你的原创像素人格卡，和朋友看看哪里同频。"><meta property="og:type" content="website"><meta property="og:title" content="麦味拾光 · 你把日子，吃成了哪种浪漫？"><meta property="og:description" content="8 道生活题，16 种原创像素人格。分享你的快乐称号，再把今天的小任务写进照片手帐。"><meta property="og:url" content="https://17-log.github.io/mc-keeps/"><meta name="twitter:card" content="summary"><style>/*STYLE*/</style></head>
 <body>
 <div class="app-shell">
  <aside class="sidebar">
@@ -9,6 +9,7 @@
    <button aria-label="照片日历" data-view="calendar" class="nav-item active"><span data-icon="calendar"></span><span>照片日历</span><small>01</small></button>
    <button aria-label="本月收藏" data-view="collection" class="nav-item"><span data-icon="box"></span><span>本月收藏</span><small>02</small></button>
    <button aria-label="年度书架" data-view="year" class="nav-item"><span data-icon="book"></span><span>年度书架</span><small>03</small></button>
+   <button aria-label="快乐人格" data-view="persona" class="nav-item persona-nav"><span data-icon="spark"></span><span>快乐人格</span><small>NEW</small></button>
   </nav>
   <div class="sidebar-note"><span class="note-star">✳</span><p>不必每天精彩，<br>每一页都算数。</p><small>A LITTLE MOMENT TO KEEP.</small></div>
   <div class="sidebar-bottom"><button id="space-btn" class="space-btn"><span class="space-dot"></span><span>示例手帐</span><span>⇄</span></button><button id="backup-btn" class="quiet-btn"><span data-icon="download"></span>备份我的记录</button><button id="restore-btn" class="quiet-btn"><span data-icon="upload"></span>恢复备份</button><input id="restore-input" type="file" accept="application/json,.json" hidden><small class="storage-note">保存在这个浏览器里</small></div>
@@ -19,7 +20,7 @@
   <footer class="app-footer"><span>记住这一餐，也记住当时的自己。</span><span>原创插画示例 · 可上传自己的照片</span></footer>
  </main>
 </div>
-<nav class="mobile-nav" aria-label="手机页面导航"><button aria-label="照片日历" data-view="calendar" class="active"><span data-icon="calendar"></span>日历</button><button aria-label="本月收藏" data-view="collection"><span data-icon="box"></span>收藏</button><button id="mobile-add" class="mobile-add" aria-label="记一餐"><span data-icon="plus"></span></button><button aria-label="年度书架" data-view="year"><span data-icon="book"></span>年册</button><button id="mobile-space"><span data-icon="user"></span>空间</button></nav>
+<nav class="mobile-nav" aria-label="手机页面导航"><button aria-label="照片日历" data-view="calendar" class="active"><span data-icon="calendar"></span>日历</button><button aria-label="本月收藏" data-view="collection"><span data-icon="box"></span>收藏</button><button id="mobile-add" class="mobile-add" aria-label="记一餐"><span data-icon="plus"></span></button><button aria-label="快乐人格" data-view="persona"><span data-icon="spark"></span>人格</button><button aria-label="年度书架" data-view="year"><span data-icon="book"></span>年册</button><button id="mobile-space"><span data-icon="user"></span>空间</button></nav>
 <dialog id="editor-dialog" class="editor-dialog"><div id="editor-host"></div></dialog>
 <dialog id="entry-dialog" class="entry-dialog"><div id="entry-host"></div></dialog>
 <dialog id="reel-dialog" class="reel-dialog"><div id="reel-host"></div></dialog>
