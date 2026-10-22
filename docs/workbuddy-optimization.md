@@ -2,7 +2,7 @@
 
 整理日期：2026-10-22。目标是完善可分享的人格入口，让朋友能接着玩，再把体验带回真实生活手帐。**继续维护同一个 [17-log/mc-keeps](https://github.com/17-log/mc-keeps) 仓库，不建立新仓库或平行应用。**
 
-本文将调研建议与当前源码衔接，作为后续操作说明，不是现网更新公告。公开目标入口为 <https://17-log.github.io/mc-keeps/#persona>；是否已部署兼容构建须另行确认。规则、存储、隐私与文件职责以 [personality.md](personality.md) 为准，公开证据与访问边界见 [virality-research.md](virality-research.md)。
+本文将调研建议与当前源码衔接，作为后续操作说明。2026-10-22 已将实现提交 bbcfc34 发布到原站 <https://17-log.github.io/mc-keeps/#persona>，并完成公开访问验收，详见 [验证及发布记录](personality-validation.md)。规则、存储、隐私与文件职责以 [personality.md](personality.md) 为准，公开证据与访问边界见 [virality-research.md](virality-research.md)。
 
 ## 先区分证据和判断
 

@@ -34,6 +34,14 @@ https://17-log.github.io/mc-keeps/#persona?v=p1&r=p1.BYCZ.2s2s002s
 
 可查看 [桌面入口](../assets/persona.png)、[手机首屏](../assets/persona-mobile.png) 和 [实际导出的人格卡](../assets/persona-card.png)。图中内容为本次测试生成的原创演示素材。
 
+## 公开发布与验收
+
+实现提交：[bbcfc34](https://github.com/17-log/mc-keeps/commit/bbcfc346a2319a5582d35ca6cdaebff225f3a227)。在原仓库 main 分支发布，沿用原 GitHub Pages，没有新建仓库或部署第二套应用。[Actions 构建及发布](https://github.com/17-log/mc-keeps/actions/runs/39725486399) 成功，包含 npm ci、npm test、npm run build。
+
+2026-10-22 对 [公开人格入口](https://17-log.github.io/mc-keeps/#persona) 再完成 10 项检查：HTTPS 200、16 种预览、手机布局、全新访问者还原分享结果、八题生成好友对照、实际评分和公开链接一致、PNG 真实下载、回原手帐草稿、原日历可用、无 JavaScript 页面错误。公开验收使用全新浏览器上下文，不依赖本机服务。
+
+同日共记录 56 项本机浏览器检查和 10 项公开站检查；公开站的 PNG 下载样本未含真实用户内容。
+
 ## 验证边界
 
 手机检查为 Chromium 模拟视口，未声称 iOS、安卓或微信真机完成验证。系统分享不可用时的弹窗已验证，原生系统分享面板、平台内扫码和各平台下载保存仍取决于实际设备。
