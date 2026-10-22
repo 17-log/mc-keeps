@@ -294,7 +294,7 @@ button.kp-type-tile { cursor: pointer; }
 .kp-link-input input:focus, .kp-link-input textarea:focus, .kp-share-url input:focus, .kp-share-url textarea:focus { border-color: #c58769; box-shadow: 0 0 0 2px #dba48822; }
 .kp-link-input .kp-btn { flex: 0 0 auto; padding: 7px 10px; margin: 0; box-shadow: none; min-height: 36px; }
 .kp-qr { display: grid; place-items: center; width: fit-content; max-width: 100%; margin: 15px auto 0; padding: 9px; background: #fff; border: 1px solid #e5d9c3; }
-.kp-qr svg, .kp-qr img, .kp-qr canvas { display: block; width: 96px; height: 96px; max-width: 100%; image-rendering: pixelated; }
+.kp-qr svg, .kp-qr img, .kp-qr canvas { display: block; width: 147px; height: 147px; max-width: 100%; image-rendering: pixelated; }
 .kp-qr > small { display: block; text-align: center; font-size: 9px; color: #b4a085; padding-top: 7px; }
 .kp-result-side-note { color: #a79783; font-size: 10px; line-height: 1.9; text-align: center; margin: 1px 5px; }
 .kp-result-side-note a { color: #aa7053; text-underline-offset: 3px; }
@@ -3941,7 +3941,7 @@ var qrcode = function() {
     try { if (result) sessionStorage.setItem(FRIEND_STORE, E.encode(result)); else sessionStorage.removeItem(FRIEND_STORE); } catch (_) {}
   }
   function restoreFriend() { try { return E.decode(sessionStorage.getItem(FRIEND_STORE)); } catch (_) { return null; } }
-  function qr(url) { const code = qrcode(0, 'M'); code.addData(url); code.make(); return code; }
+  function qr(url) { const code = qrcode(0, 'Q'); code.addData(url); code.make(); return code; }
   function qrMarkup(result) {
     return '<div class="kp-qr" aria-label="打开这张结果卡的二维码">' + qr(shareUrl(result)).createSvgTag({ cellSize: 3, margin: 12, scalable: true }) + '<small>扫码看结果 · 测测自己</small></div>';
   }
@@ -4100,7 +4100,7 @@ var qrcode = function() {
         c.fillStyle = '#ede4d4'; c.fillRect(110, y + 15, 858, 11); c.fillStyle = colors[i]; c.fillRect(110, y + 15, 858 * score / 100, 11); c.fillStyle = ink; c.fillRect(110 + Math.min(852, 852 * score / 100), y + 11, 6, 19);
       });
       c.font = '17px "Microsoft YaHei",sans-serif'; c.fillStyle = '#b09b81'; c.fillText('0 偏向左端 / 100 偏向右端 / 50 混合偏好 · 不是概率', 110, 1141);
-      const code = qr(shareUrl(result)), cells = code.getModuleCount(), module = 4, box = (cells + 8) * module, qx = 968 - box, qy = 1168;
+      const code = qr(shareUrl(result)), cells = code.getModuleCount(), module = 4, box = (cells + 8) * module, qx = 968 - box, qy = 1156;
       c.fillStyle = '#fff'; c.fillRect(qx, qy, box, box); c.fillStyle = '#281c21';
       for (let r = 0; r < cells; r++) for (let col = 0; col < cells; col++) if (code.isDark(r, col)) c.fillRect(qx + (col + 4) * module, qy + (r + 4) * module, module, module);
       c.fillStyle = ink; c.font = 'bold 31px "Microsoft YaHei",sans-serif'; c.fillText('你把日子，吃成了哪种浪漫？', 110, 1204);

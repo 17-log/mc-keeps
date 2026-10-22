@@ -193,7 +193,7 @@ button.kp-type-tile { cursor: pointer; }
 .kp-link-input input:focus, .kp-link-input textarea:focus, .kp-share-url input:focus, .kp-share-url textarea:focus { border-color: #c58769; box-shadow: 0 0 0 2px #dba48822; }
 .kp-link-input .kp-btn { flex: 0 0 auto; padding: 7px 10px; margin: 0; box-shadow: none; min-height: 36px; }
 .kp-qr { display: grid; place-items: center; width: fit-content; max-width: 100%; margin: 15px auto 0; padding: 9px; background: #fff; border: 1px solid #e5d9c3; }
-.kp-qr svg, .kp-qr img, .kp-qr canvas { display: block; width: 96px; height: 96px; max-width: 100%; image-rendering: pixelated; }
+.kp-qr svg, .kp-qr img, .kp-qr canvas { display: block; width: 147px; height: 147px; max-width: 100%; image-rendering: pixelated; }
 .kp-qr > small { display: block; text-align: center; font-size: 9px; color: #b4a085; padding-top: 7px; }
 .kp-result-side-note { color: #a79783; font-size: 10px; line-height: 1.9; text-align: center; margin: 1px 5px; }
 .kp-result-side-note a { color: #aa7053; text-underline-offset: 3px; }

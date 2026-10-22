@@ -35,7 +35,7 @@
     try { if (result) sessionStorage.setItem(FRIEND_STORE, E.encode(result)); else sessionStorage.removeItem(FRIEND_STORE); } catch (_) {}
   }
   function restoreFriend() { try { return E.decode(sessionStorage.getItem(FRIEND_STORE)); } catch (_) { return null; } }
-  function qr(url) { const code = qrcode(0, 'M'); code.addData(url); code.make(); return code; }
+  function qr(url) { const code = qrcode(0, 'Q'); code.addData(url); code.make(); return code; }
   function qrMarkup(result) {
     return '<div class="kp-qr" aria-label="打开这张结果卡的二维码">' + qr(shareUrl(result)).createSvgTag({ cellSize: 3, margin: 12, scalable: true }) + '<small>扫码看结果 · 测测自己</small></div>';
   }
@@ -194,7 +194,7 @@
         c.fillStyle = '#ede4d4'; c.fillRect(110, y + 15, 858, 11); c.fillStyle = colors[i]; c.fillRect(110, y + 15, 858 * score / 100, 11); c.fillStyle = ink; c.fillRect(110 + Math.min(852, 852 * score / 100), y + 11, 6, 19);
       });
       c.font = '17px "Microsoft YaHei",sans-serif'; c.fillStyle = '#b09b81'; c.fillText('0 偏向左端 / 100 偏向右端 / 50 混合偏好 · 不是概率', 110, 1141);
-      const code = qr(shareUrl(result)), cells = code.getModuleCount(), module = 4, box = (cells + 8) * module, qx = 968 - box, qy = 1168;
+      const code = qr(shareUrl(result)), cells = code.getModuleCount(), module = 4, box = (cells + 8) * module, qx = 968 - box, qy = 1156;
       c.fillStyle = '#fff'; c.fillRect(qx, qy, box, box); c.fillStyle = '#281c21';
       for (let r = 0; r < cells; r++) for (let col = 0; col < cells; col++) if (code.isDark(r, col)) c.fillRect(qx + (col + 4) * module, qy + (r + 4) * module, module, module);
       c.fillStyle = ink; c.font = 'bold 31px "Microsoft YaHei",sans-serif'; c.fillText('你把日子，吃成了哪种浪漫？', 110, 1204);
